@@ -60,9 +60,9 @@ const PerioxesSlugRoute = PerioxesSlugRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArthraSlugRoute = ArthraSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ArthraRoute,
+  id: '/arthra/$slug',
+  path: '/arthra/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -139,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  ArthraSlugRoute: typeof ArthraSlugRoute
   PerioxesSlugRoute: typeof PerioxesSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ArthraIndexRoute: typeof ArthraIndexRoute
@@ -206,10 +207,10 @@ declare module '@tanstack/react-router' {
     }
     '/arthra/$slug': {
       id: '/arthra/$slug'
-      path: '/$slug'
+      path: '/arthra/$slug'
       fullPath: '/arthra/$slug'
       preLoaderRoute: typeof ArthraSlugRouteImport
-      parentRoute: typeof ArthraRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -218,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  ArthraSlugRoute: ArthraSlugRoute,
   PerioxesSlugRoute: PerioxesSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ArthraIndexRoute: ArthraIndexRoute,
