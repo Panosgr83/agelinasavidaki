@@ -1,21 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/logo-light.png";
-import signingPhoto from "@/assets/about-portrait.png";
+
 
 export function SiteFooter() {
   return (
     <footer className="bg-navy-gradient text-ivory relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{ backgroundImage: "radial-gradient(circle at 20% 20%, #C9A86A 0%, transparent 40%), radial-gradient(circle at 80% 80%, #C9A86A 0%, transparent 40%)" }} />
-
-      {/* Small signing photo — edge of footer */}
-      <div className="hidden md:block absolute top-10 right-0 z-0 pointer-events-none">
-        <div className="relative w-40 lg:w-52 aspect-[4/5] overflow-hidden border-l border-t border-b border-gold/30">
-          <img src={signingPhoto} alt="Αγγελική Σαββιδάκη υπογράφει" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#0A1A3D]/30 to-[#0A1A3D]/85" />
-        </div>
-      </div>
 
       <div className="hairline opacity-50" />
 
