@@ -86,6 +86,7 @@ export function SiteFooter() {
       <div className="border-t border-ivory/10">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-ivory/45">
           <p>© {new Date().getFullYear()} Αγγελική Σαββιδάκη. All rights reserved.</p>
+          <Link to="/gdpr" className="hover:text-gold transition-colors">Πολιτική Απορρήτου &amp; Όροι (GDPR)</Link>
           <p className="tracking-wider">Crafted with intention.</p>
         </div>
       </div>

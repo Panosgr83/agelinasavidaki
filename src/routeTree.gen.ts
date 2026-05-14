@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as GdprRouteImport } from './routes/gdpr'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -19,6 +20,11 @@ import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as PerioxesSlugRouteImport } from './routes/perioxes.$slug'
 import { Route as ArthraSlugRouteImport } from './routes/arthra.$slug'
 
+const GdprRoute = GdprRouteImport.update({
+  id: '/gdpr',
+  path: '/gdpr',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/gdpr': typeof GdprRoute
   '/arthra/$slug': typeof ArthraSlugRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/gdpr': typeof GdprRoute
   '/arthra/$slug': typeof ArthraSlugRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/gdpr': typeof GdprRoute
   '/arthra/$slug': typeof ArthraSlugRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/gdpr'
     | '/arthra/$slug'
     | '/perioxes/$slug'
     | '/services/$slug'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/gdpr'
     | '/arthra/$slug'
     | '/perioxes/$slug'
     | '/services/$slug'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/gdpr'
     | '/arthra/$slug'
     | '/perioxes/$slug'
     | '/services/$slug'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  GdprRoute: typeof GdprRoute
   ArthraSlugRoute: typeof ArthraSlugRoute
   PerioxesSlugRoute: typeof PerioxesSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
@@ -149,6 +162,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/gdpr': {
+      id: '/gdpr'
+      path: '/gdpr'
+      fullPath: '/gdpr'
+      preLoaderRoute: typeof GdprRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  GdprRoute: GdprRoute,
   ArthraSlugRoute: ArthraSlugRoute,
   PerioxesSlugRoute: PerioxesSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,

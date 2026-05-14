@@ -5,6 +5,7 @@ import heroPortrait from "@/assets/hero-portrait.png";
 import aboutPortrait from "@/assets/about-portrait.png";
 import { areas } from "@/lib/areas";
 import { articles } from "@/lib/articles";
+import { publishedTestimonials } from "@/lib/testimonials";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -253,34 +254,34 @@ function HomePage() {
             ))}
           </div>
 
-          {/* testimonials */}
-          <div className="max-w-2xl mb-14">
-            <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Μαρτυρίες</p>
-            <h2 className="font-serif text-3xl lg:text-5xl leading-[1.05] tracking-tight">
-              Άνθρωποι που <em className="not-italic text-gold">άλλαξαν πορεία.</em>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {[
-              { quote: "Ξεκίνησα μπερδεμένη και βγήκα από τη συνεργασία με ξεκάθαρους στόχους και — κυρίως — με την πίστη ότι μπορώ να τους πετύχω. Η Αγγελική με βοήθησε να δω τι πραγματικά θέλω.", name: "Μαρία Κ.", role: "Marketing Manager" },
-              { quote: "Ζούσα με χρόνιο άγχος για χρόνια. Σε 3 μήνες δουλειάς έμαθα τεχνικές που χρησιμοποιώ καθημερινά. Νιώθω για πρώτη φορά τον έλεγχο της ζωής μου.", name: "Δημήτρης Π.", role: "Επιχειρηματίας" },
-              { quote: "Πήγα στην Αγγελική για επαγγελματικό προσανατολισμό για τον γιο μου. Η διαδικασία ήταν δομημένη, ανθρώπινη και έδωσε στο παιδί μου ξεκάθαρη κατεύθυνση.", name: "Ελένη Σ.", role: "Μητέρα μαθητή Λυκείου" },
-            ].map((t) => (
-              <div key={t.name} className="bg-ivory border border-taupe/30 p-8 lg:p-10 flex flex-col">
-                <Quote size={28} className="text-gold/70 mb-6" strokeWidth={1.2} />
-                <p className="text-[14.5px] leading-[1.85] text-ink/80 italic flex-1 font-serif">"{t.quote}"</p>
-                <div className="mt-8 pt-6 border-t border-taupe/30">
-                  <p className="font-serif text-[1.05rem] text-navy-deep">{t.name}</p>
-                  <p className="text-[11px] tracking-[0.18em] uppercase text-ink/55 mt-1">{t.role}</p>
-                </div>
+          {/* testimonials — εμφανίζονται μόνο με τεκμηριωμένη συγκατάθεση (GDPR). */}
+          {publishedTestimonials.length > 0 && (
+            <>
+              <div className="max-w-2xl mb-14">
+                <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Μαρτυρίες</p>
+                <h2 className="font-serif text-3xl lg:text-5xl leading-[1.05] tracking-tight">
+                  Άνθρωποι που <em className="not-italic text-gold">άλλαξαν πορεία.</em>
+                </h2>
               </div>
-            ))}
-          </div>
 
-          <div className="mt-14 text-center">
-            <Link to="/contact" className="btn-outline-navy">Γίνε η επόμενη ιστορία</Link>
-          </div>
+              <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+                {publishedTestimonials.map((t) => (
+                  <figure key={t.id} className="bg-ivory border border-taupe/30 p-8 lg:p-10 flex flex-col">
+                    <Quote size={28} className="text-gold/70 mb-6" strokeWidth={1.2} />
+                    <blockquote className="text-[14.5px] leading-[1.85] text-ink/80 italic flex-1 font-serif">"{t.quote}"</blockquote>
+                    <figcaption className="mt-8 pt-6 border-t border-taupe/30">
+                      <p className="font-serif text-[1.05rem] text-navy-deep">{t.name}</p>
+                      <p className="text-[11px] tracking-[0.18em] uppercase text-ink/55 mt-1">{t.role}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+
+              <div className="mt-14 text-center">
+                <Link to="/contact" className="btn-outline-navy">Γίνε η επόμενη ιστορία</Link>
+              </div>
+            </>
+          )}
         </div>
       </section>
 
