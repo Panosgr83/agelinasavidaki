@@ -66,7 +66,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-[#071533] border-t border-gold/15 px-6 py-6 space-y-4">
+        <div className="lg:hidden bg-[#060B1C] border-t border-gold/15 px-6 py-6 space-y-4">
           {nav.map((n) => (
             <Link
               key={n.to}
