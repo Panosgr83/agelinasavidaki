@@ -42,8 +42,8 @@ export function SiteFooter() {
         <div className="lg:col-span-3">
           <h4 className="eyebrow mb-6">Επικοινωνία</h4>
           <ul className="space-y-4 text-[14px] text-ivory/70 font-light">
-            <li className="flex items-center gap-3"><Phone size={13} strokeWidth={1.4} className="text-gold" /><span>+30 690 000 0000</span></li>
-            <li className="flex items-center gap-3"><Mail size={13} strokeWidth={1.4} className="text-gold" /><span>info@angelikisavvidaki.gr</span></li>
+            <li className="flex items-center gap-3"><Phone size={13} strokeWidth={1.4} className="text-gold" /><a href="tel:+306972258578" className="hover:text-gold transition-colors">+30 6972 258 578</a></li>
+            <li className="flex items-start gap-3"><Mail size={13} strokeWidth={1.4} className="text-gold mt-1" /><span className="flex flex-col"><a href="mailto:aggisav@hotmail.com" className="hover:text-gold transition-colors">aggisav@hotmail.com</a><a href="mailto:angelikisavid@gmail.com" className="hover:text-gold transition-colors">angelikisavid@gmail.com</a></span></li>
             <li className="flex items-start gap-3"><MapPin size={13} strokeWidth={1.4} className="text-gold mt-1" /><span>Δήλου 2, 11146<br/>Γαλάτσι, Αθήνα</span></li>
           </ul>
           <div className="mt-6 border border-gold/25 overflow-hidden">

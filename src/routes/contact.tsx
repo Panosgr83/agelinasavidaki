@@ -28,7 +28,8 @@ export const Route = createFileRoute("/contact")({
             addressCountry: "GR",
           },
           geo: { "@type": "GeoCoordinates", latitude: 38.0211, longitude: 23.7506 },
-          telephone: "+30 690 000 0000",
+          telephone: "+306972258578",
+          email: "aggisav@hotmail.com",
           url: "https://agelinasavidaki.lovable.app/contact",
         }),
       },
@@ -119,7 +120,7 @@ function ContactPage() {
               <p className="text-sm text-ink/60">Επικοινώνησε όπως σε εξυπηρετεί.</p>
             </div>
 
-            <a href="https://wa.me/306900000000" className="luxury-card-light p-6 flex items-start gap-4 group">
+            <a href="https://wa.me/306972258578" className="luxury-card-light p-6 flex items-start gap-4 group">
               <div className="h-11 w-11 grid place-items-center border border-gold/50 text-gold shrink-0"><MessageCircle size={18} strokeWidth={1.3} /></div>
               <div>
                 <p className="eyebrow !text-[color:var(--navy-deep)]/60 mb-1">WhatsApp</p>
@@ -127,21 +128,22 @@ function ContactPage() {
               </div>
             </a>
 
-            <a href="tel:+306900000000" className="luxury-card-light p-6 flex items-start gap-4 group">
+            <a href="tel:+306972258578" className="luxury-card-light p-6 flex items-start gap-4 group">
               <div className="h-11 w-11 grid place-items-center border border-gold/50 text-gold shrink-0"><Phone size={18} strokeWidth={1.3} /></div>
               <div>
                 <p className="eyebrow !text-[color:var(--navy-deep)]/60 mb-1">Κλήση</p>
-                <p className="font-serif text-lg group-hover:text-gold transition-colors">+30 690 000 0000</p>
+                <p className="font-serif text-lg group-hover:text-gold transition-colors">+30 6972 258 578</p>
               </div>
             </a>
 
-            <a href="mailto:info@angeliki.gr" className="luxury-card-light p-6 flex items-start gap-4 group">
+            <div className="luxury-card-light p-6 flex items-start gap-4">
               <div className="h-11 w-11 grid place-items-center border border-gold/50 text-gold shrink-0"><Mail size={18} strokeWidth={1.3} /></div>
               <div>
                 <p className="eyebrow !text-[color:var(--navy-deep)]/60 mb-1">Email</p>
-                <p className="font-serif text-lg group-hover:text-gold transition-colors">info@angeliki.gr</p>
+                <a href="mailto:aggisav@hotmail.com" className="font-serif text-lg block hover:text-gold transition-colors">aggisav@hotmail.com</a>
+                <a href="mailto:angelikisavid@gmail.com" className="font-serif text-base block text-ink/70 hover:text-gold transition-colors mt-1">angelikisavid@gmail.com</a>
               </div>
-            </a>
+            </div>
           </aside>
         </div>
       </section>
