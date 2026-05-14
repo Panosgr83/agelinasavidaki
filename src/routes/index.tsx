@@ -153,7 +153,48 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* PROCESS — πώς δουλεύουμε βήμα-βήμα */}
+      <section className="bg-ivory text-ink py-28 lg:py-36 border-t border-taupe/20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="max-w-2xl mb-16 lg:mb-20">
+            <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Πώς δουλεύουμε</p>
+            <h2 className="font-serif text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+              Από την πρώτη γνωριμία<br/>
+              στη <em className="not-italic text-gold">διαρκή αλλαγή.</em>
+            </h2>
+            <p className="mt-6 text-[15px] leading-[1.8] text-ink/70 max-w-lg">
+              Μια ξεκάθαρη διαδικασία 4 βημάτων. Χωρίς δεσμεύσεις στο πρώτο ραντεβού — απλώς γνωριζόμαστε και βλέπουμε αν ταιριάζουμε.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:gap-x-10">
+            {[
+              { icon: MessageCircle, step: "01", title: "Δωρεάν γνωριμία", desc: "Σύντομη συνάντηση 20 λεπτών για να μιλήσουμε για το τι ψάχνεις και να δούμε αν ταιριάζουμε." },
+              { icon: Target, step: "02", title: "Καθορισμός στόχων", desc: "Στην 1η συνεδρία χαρτογραφούμε τα πραγματικά εμπόδια και χτίζουμε μαζί το προσωπικό σου πλάνο." },
+              { icon: Compass, step: "03", title: "Συνεδρίες coaching", desc: "Εβδομαδιαίες ή 15ήμερες συναντήσεις, διά ζώσης στο Γαλάτσι ή online — με συγκεκριμένα ορόσημα." },
+              { icon: Repeat, step: "04", title: "Ενσωμάτωση", desc: "Εργαλεία NLP και mindfulness για να κρατήσεις τις αλλαγές, ακόμα και μετά το τέλος της συνεργασίας." },
+            ].map(({ icon: Icon, step, title, desc }) => (
+              <div key={step} className="relative space-y-5">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 grid place-items-center border border-gold/60 text-gold">
+                    <Icon size={20} strokeWidth={1.3} />
+                  </div>
+                  <span className="font-serif text-2xl text-gold/60">{step}</span>
+                </div>
+                <h3 className="font-serif text-[1.5rem] leading-tight">{title}</h3>
+                <p className="text-[14px] text-ink/65 leading-[1.8]">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 flex flex-col sm:flex-row gap-4 items-start">
+            <Link to="/contact" className="btn-outline-navy">Κλείσε δωρεάν γνωριμία</Link>
+            <p className="text-[13px] text-ink/55 leading-relaxed sm:pt-4">
+              Χωρίς χρέωση. Χωρίς δεσμεύσεις.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className="bg-navy-gradient text-ivory py-32 lg:py-40 relative overflow-hidden">
         <div className="absolute -left-32 bottom-0 w-[28rem] h-[28rem] rounded-full opacity-[0.05] pointer-events-none"
           style={{ background: "radial-gradient(circle, #C8A96B, transparent 70%)" }} />
