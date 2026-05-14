@@ -13,15 +13,17 @@ export function SiteFooter() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12 pt-24 pb-16 grid gap-16 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4 flex flex-col items-center text-center">
-          <img src={logo} alt="Αγγελική Σαββιδάκη — Life & NLP Coach" className="w-44 lg:w-56 aspect-[4/3] object-contain object-center my-2" />
-          <p className="text-[12px] text-ivory/65 italic font-serif mt-2 tracking-wide max-w-xs">
+          {/* Golden ratio φ ≈ 1.618 — logo : tagline : headline : sub */}
+          {/* logo ~210px → 21px tagline → 34px headline → 13px sub */}
+          <img src={logo} alt="Αγγελική Σαββιδάκη — Life & NLP Coach" className="w-[170px] lg:w-[210px] h-auto object-contain" />
+          <p className="text-[13px] lg:text-[14px] text-ivory/65 italic font-serif mt-[21px] tracking-wide max-w-xs">
             Σύμβουλος Προσωπικής & Επαγγελματικής Ανάπτυξης
           </p>
-          <p className="font-serif text-[1.6rem] lg:text-[1.85rem] leading-[1.2] text-ivory tracking-tight mt-8">
+          <p className="font-serif text-[27px] lg:text-[34px] leading-[1.2] text-ivory tracking-tight mt-[34px]">
             Η ζωή που ονειρεύεσαι<br/>
             <em className="not-italic text-gold-gradient">σε περιμένει.</em>
           </p>
-          <p className="mt-4 text-[14px] text-ivory/55 italic font-serif">
+          <p className="mt-[21px] text-[13px] lg:text-[14px] text-ivory/55 italic font-serif">
             Ας τη δημιουργήσουμε μαζί.
           </p>
         </div>
