@@ -9,29 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ArthraRouteImport } from './routes/arthra'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as PerioxesIndexRouteImport } from './routes/perioxes.index'
+import { Route as ArthraIndexRouteImport } from './routes/arthra.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as PerioxesSlugRouteImport } from './routes/perioxes.$slug'
 import { Route as ArthraSlugRouteImport } from './routes/arthra.$slug'
 
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ArthraRoute = ArthraRouteImport.update({
-  id: '/arthra',
-  path: '/arthra',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -44,15 +34,25 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PerioxesIndexRoute = PerioxesIndexRouteImport.update({
   id: '/perioxes/',
   path: '/perioxes/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArthraIndexRoute = ArthraIndexRouteImport.update({
+  id: '/arthra/',
+  path: '/arthra/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PerioxesSlugRoute = PerioxesSlugRouteImport.update({
   id: '/perioxes/$slug',
@@ -68,104 +68,91 @@ const ArthraSlugRoute = ArthraSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/arthra': typeof ArthraRouteWithChildren
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRouteWithChildren
   '/arthra/$slug': typeof ArthraSlugRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/arthra/': typeof ArthraIndexRoute
   '/perioxes/': typeof PerioxesIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/arthra': typeof ArthraRouteWithChildren
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRouteWithChildren
   '/arthra/$slug': typeof ArthraSlugRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/arthra': typeof ArthraIndexRoute
   '/perioxes': typeof PerioxesIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/arthra': typeof ArthraRouteWithChildren
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRouteWithChildren
   '/arthra/$slug': typeof ArthraSlugRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/arthra/': typeof ArthraIndexRoute
   '/perioxes/': typeof PerioxesIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
-    | '/arthra'
     | '/contact'
-    | '/services'
     | '/arthra/$slug'
     | '/perioxes/$slug'
     | '/services/$slug'
+    | '/arthra/'
     | '/perioxes/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/arthra'
     | '/contact'
-    | '/services'
     | '/arthra/$slug'
     | '/perioxes/$slug'
     | '/services/$slug'
+    | '/arthra'
     | '/perioxes'
+    | '/services'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/arthra'
     | '/contact'
-    | '/services'
     | '/arthra/$slug'
     | '/perioxes/$slug'
     | '/services/$slug'
+    | '/arthra/'
     | '/perioxes/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ArthraRoute: typeof ArthraRouteWithChildren
   ContactRoute: typeof ContactRoute
-  ServicesRoute: typeof ServicesRouteWithChildren
   PerioxesSlugRoute: typeof PerioxesSlugRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
+  ArthraIndexRoute: typeof ArthraIndexRoute
   PerioxesIndexRoute: typeof PerioxesIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/arthra': {
-      id: '/arthra'
-      path: '/arthra'
-      fullPath: '/arthra'
-      preLoaderRoute: typeof ArthraRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -182,6 +169,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/perioxes/': {
       id: '/perioxes/'
       path: '/perioxes'
@@ -189,12 +183,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PerioxesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/arthra/': {
+      id: '/arthra/'
+      path: '/arthra'
+      fullPath: '/arthra/'
+      preLoaderRoute: typeof ArthraIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/$slug': {
       id: '/services/$slug'
-      path: '/$slug'
+      path: '/services/$slug'
       fullPath: '/services/$slug'
       preLoaderRoute: typeof ServicesSlugRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/perioxes/$slug': {
       id: '/perioxes/$slug'
@@ -213,38 +214,26 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface ArthraRouteChildren {
-  ArthraSlugRoute: typeof ArthraSlugRoute
-}
-
-const ArthraRouteChildren: ArthraRouteChildren = {
-  ArthraSlugRoute: ArthraSlugRoute,
-}
-
-const ArthraRouteWithChildren =
-  ArthraRoute._addFileChildren(ArthraRouteChildren)
-
-interface ServicesRouteChildren {
-  ServicesSlugRoute: typeof ServicesSlugRoute
-}
-
-const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesSlugRoute: ServicesSlugRoute,
-}
-
-const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
-  ServicesRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  ArthraRoute: ArthraRouteWithChildren,
   ContactRoute: ContactRoute,
-  ServicesRoute: ServicesRouteWithChildren,
   PerioxesSlugRoute: PerioxesSlugRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
+  ArthraIndexRoute: ArthraIndexRoute,
   PerioxesIndexRoute: PerioxesIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { articles } from "@/lib/articles";
 
-export const Route = createFileRoute("/arthra")({
+export const Route = createFileRoute("/arthra/")({
   head: () => ({
     meta: [
       { title: "Άρθρα — Αγγελική Σαββιδάκη | Coaching, NLP & Προσωπική Ανάπτυξη" },
