@@ -7,11 +7,13 @@ import aboutPortrait from "@/assets/about-portrait.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Αγγελική Σαββιδάκη — Life & NLP Coach" },
-      { name: "description", content: "Ξαναχτίσε τη ζωή σου με καθαρότητα, αυτοπεποίθηση και κατεύθυνση. Premium 1:1 coaching." },
-      { property: "og:title", content: "Αγγελική Σαββιδάκη — Life & NLP Coach" },
-      { property: "og:description", content: "Premium 1:1 coaching για βαθιά, διαρκή αλλαγή." },
+      { title: "Life & NLP Coach Αθήνα — Γαλάτσι, Ν. Ιωνία, Φιλοθέη | Αγγελική Σαββιδάκη" },
+      { name: "description", content: "Πιστοποιημένη Life & NLP Coach που εξυπηρετεί Γαλάτσι, Νέα Ιωνία, Νέο Ηράκλειο, Νέα Φιλαδέλφεια, Κυψέλη, Φιλοθέη, Ψυχικό. Premium 1:1 coaching για καθαρότητα και αυτοπεποίθηση." },
+      { property: "og:title", content: "Life & NLP Coach Αθήνα | Αγγελική Σαββιδάκη" },
+      { property: "og:description", content: "Premium 1:1 coaching σε Γαλάτσι, Νέα Ιωνία, Φιλοθέη, Ψυχικό και άλλες περιοχές της Αττικής." },
+      { property: "og:url", content: "https://agelinasavidaki.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://agelinasavidaki.lovable.app/" }],
   }),
   component: HomePage,
 });
