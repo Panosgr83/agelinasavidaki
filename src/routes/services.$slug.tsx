@@ -478,6 +478,10 @@ function ServiceDetail() {
           </div>
         </section>
       )}
+
+      <section className="bg-champagne text-ink py-24">
+        <div className="mx-auto max-w-5xl px-6 lg:px-12">
+          <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Τα οφέλη</p>
           <h2 className="font-serif text-3xl lg:text-4xl mb-12">Τι θα κερδίσεις από τη συνεργασία μας.</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {service.benefits.map((b: string) => (
