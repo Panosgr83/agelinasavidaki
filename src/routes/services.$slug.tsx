@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, Users, Target } from "lucide-react";
 
 type Service = {
   title: string;
@@ -11,6 +11,8 @@ type Service = {
   howTitle?: string;
   how?: string[];
   benefits: string[];
+  forWhom?: string[];
+  outcomes?: string[];
 };
 
 const services: Record<string, Service> = {
@@ -36,6 +38,16 @@ const services: Record<string, Service> = {
       "Συνειδητή ζωή με νόημα",
     ],
     benefits: ["Καλύτερη ισορροπία ζωής", "Διαχείριση άγχους", "Ξεκάθαρη κατεύθυνση", "Αυτογνωσία"],
+    forWhom: [
+      "Νιώθεις εγκλωβισμένος/η σε μια ζωή που δεν σε εκφράζει πια",
+      "Έχεις ξεκάθαρη αίσθηση ότι κάτι πρέπει ν' αλλάξει — αλλά δεν ξέρεις από πού να ξεκινήσεις",
+      "Θες να πάρεις μεγάλες αποφάσεις (καριέρα, σχέση, μετακόμιση) με καθαρό μυαλό",
+    ],
+    outcomes: [
+      "Σε 3 μήνες: ξεκάθαροι στόχοι, σχέδιο δράσης και τα πρώτα ορατά αποτελέσματα στην καθημερινότητα",
+      "Σε 6 μήνες: σταθερές νέες συνήθειες, μειωμένο άγχος, αυτοπεποίθηση στις αποφάσεις σου",
+      "Μακροπρόθεσμα: μια σχέση εμπιστοσύνης με τον εαυτό σου που μένει και μετά το τέλος της συνεργασίας",
+    ],
   },
   "mindfulness": {
     title: "Mindfulness",
@@ -82,6 +94,16 @@ const services: Record<string, Service> = {
       "Όσους θέλουν προληπτική αυτοφροντίδα",
     ],
     benefits: ["Ηρεμία & ξεκούραση", "Καλύτερος ύπνος", "Καθαρή σκέψη", "Έλεγχος αντιδράσεων"],
+    forWhom: [
+      "Ζεις με χρόνιο stress, σφιγμένο σώμα ή προβλήματα ύπνου",
+      "Έχεις φτάσει ή πλησιάζεις σε burnout στη δουλειά ή στη γονεϊκότητα",
+      "Ξέρεις θεωρητικά ότι «πρέπει να χαλαρώσεις» — αλλά δεν ξέρεις πρακτικά πώς",
+    ],
+    outcomes: [
+      "Σε λίγες εβδομάδες: 3-4 τεχνικές που εφαρμόζεις άμεσα όταν χτυπάει το άγχος",
+      "Σε 3 μήνες: ορατή μείωση στην ένταση του νευρικού συστήματος, καλύτερος ύπνος",
+      "Σε 6 μήνες: αλλαγμένες δομές ζωής που σταματούν να παράγουν διαρκές άγχος",
+    ],
   },
   "parent-coaching": {
     title: "Συμβουλευτική Γονέων",
@@ -151,6 +173,16 @@ const services: Record<string, Service> = {
       "Πλάνο επόμενων βημάτων",
     ],
     benefits: ["Αυτογνωσία", "Ξεκάθαρη κατεύθυνση", "Συνειδητές επιλογές", "Αυτοπεποίθηση"],
+    forWhom: [
+      "Έφηβοι Λυκείου που πρέπει να επιλέξουν κατεύθυνση και σχολή χωρίς να ξέρουν τι θέλουν",
+      "Παιδιά που πιέζονται από οικογενειακές προσδοκίες και νιώθουν χαμένα",
+      "Φοιτητές που αμφισβητούν την επιλογή τους και σκέφτονται αλλαγή",
+    ],
+    outcomes: [
+      "Σε 4-6 συνεδρίες: ολοκληρωμένη εικόνα προσωπικότητας, ικανοτήτων και κινήτρων",
+      "Στο τέλος: λίστα 3-5 σχολών/επαγγελμάτων που πραγματικά ταιριάζουν",
+      "Πάνω απ' όλα: ο έφηβος αποφασίζει συνειδητά — όχι από φόβο ή πίεση",
+    ],
   },
   "career-orientation-adults": {
     title: "Επαγγελματικός Προσανατολισμός Ενηλίκων",
@@ -312,6 +344,16 @@ const services: Record<string, Service> = {
       "Ξεπέρασμα φοβιών & τραυμάτων",
     ],
     benefits: ["Αλλαγή πεποιθήσεων", "Αυτοπεποίθηση", "Νέες δεξιότητες", "Θετική νοοτροπία"],
+    forWhom: [
+      "Έχεις περιοριστικές πεποιθήσεις που σε κρατούν πίσω εδώ και χρόνια",
+      "Παλεύεις με κακές συνήθειες (κάπνισμα, υπερφαγία, αναβλητικότητα) που δεν σπάνε με τη θέληση",
+      "Θες πρακτικά εργαλεία — όχι θεωρία — για συναισθηματικές αντιδράσεις, φοβίες ή άγχος επιδόσεων",
+    ],
+    outcomes: [
+      "Σε 1-2 μήνες: άμεση αλλαγή σε συγκεκριμένο μοτίβο (π.χ. φοβία, συνήθεια)",
+      "Σε 3-6 μήνες: νέες αυτόματες αντιδράσεις σε καταστάσεις που πριν σε σαμπόταραν",
+      "Διαρκώς: μια εργαλειοθήκη που μπορείς να ξαναχρησιμοποιήσεις σε κάθε νέα πρόκληση",
+    ],
   },
 };
 
@@ -393,6 +435,49 @@ function ServiceDetail() {
           )}
         </div>
       </section>
+
+      {(service.forWhom || service.outcomes) && (
+        <section className="bg-ivory text-ink py-20 lg:py-24 border-t border-taupe/30">
+          <div className="mx-auto max-w-5xl px-6 lg:px-12 grid md:grid-cols-2 gap-10 lg:gap-16">
+            {service.forWhom && (
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-10 w-10 grid place-items-center border border-gold/60 text-gold">
+                    <Users size={18} strokeWidth={1.3} />
+                  </div>
+                  <h2 className="font-serif text-2xl lg:text-3xl">Για ποιον είναι</h2>
+                </div>
+                <ul className="space-y-4">
+                  {service.forWhom.map((w: string) => (
+                    <li key={w} className="flex items-start gap-3 text-[15px] text-ink/80 leading-[1.75]">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
+                      {w}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {service.outcomes && (
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-10 w-10 grid place-items-center border border-gold/60 text-gold">
+                    <Target size={18} strokeWidth={1.3} />
+                  </div>
+                  <h2 className="font-serif text-2xl lg:text-3xl">Τι θα κερδίσεις σε 3-6 μήνες</h2>
+                </div>
+                <ul className="space-y-4">
+                  {service.outcomes.map((o: string) => (
+                    <li key={o} className="flex items-start gap-3 text-[15px] text-ink/80 leading-[1.75]">
+                      <Check size={16} className="text-gold mt-1 shrink-0" strokeWidth={1.5} />
+                      {o}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       <section className="bg-champagne text-ink py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-12">

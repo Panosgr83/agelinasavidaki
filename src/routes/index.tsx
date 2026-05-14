@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Brain, Heart, Compass, Sparkles, ArrowUpRight, MapPin, BookOpen } from "lucide-react";
+import { ArrowRight, Brain, Heart, Compass, Sparkles, ArrowUpRight, MapPin, BookOpen, MessageCircle, Target, Repeat, Quote } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.png";
 import aboutPortrait from "@/assets/about-portrait.png";
 import { areas } from "@/lib/areas";
@@ -153,7 +153,48 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* PROCESS — πώς δουλεύουμε βήμα-βήμα */}
+      <section className="bg-ivory text-ink py-28 lg:py-36 border-t border-taupe/20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="max-w-2xl mb-16 lg:mb-20">
+            <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Πώς δουλεύουμε</p>
+            <h2 className="font-serif text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+              Από την πρώτη γνωριμία<br/>
+              στη <em className="not-italic text-gold">διαρκή αλλαγή.</em>
+            </h2>
+            <p className="mt-6 text-[15px] leading-[1.8] text-ink/70 max-w-lg">
+              Μια ξεκάθαρη διαδικασία 4 βημάτων. Χωρίς δεσμεύσεις στο πρώτο ραντεβού — απλώς γνωριζόμαστε και βλέπουμε αν ταιριάζουμε.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:gap-x-10">
+            {[
+              { icon: MessageCircle, step: "01", title: "Δωρεάν γνωριμία", desc: "Σύντομη συνάντηση 20 λεπτών για να μιλήσουμε για το τι ψάχνεις και να δούμε αν ταιριάζουμε." },
+              { icon: Target, step: "02", title: "Καθορισμός στόχων", desc: "Στην 1η συνεδρία χαρτογραφούμε τα πραγματικά εμπόδια και χτίζουμε μαζί το προσωπικό σου πλάνο." },
+              { icon: Compass, step: "03", title: "Συνεδρίες coaching", desc: "Εβδομαδιαίες ή 15ήμερες συναντήσεις, διά ζώσης στο Γαλάτσι ή online — με συγκεκριμένα ορόσημα." },
+              { icon: Repeat, step: "04", title: "Ενσωμάτωση", desc: "Εργαλεία NLP και mindfulness για να κρατήσεις τις αλλαγές, ακόμα και μετά το τέλος της συνεργασίας." },
+            ].map(({ icon: Icon, step, title, desc }) => (
+              <div key={step} className="relative space-y-5">
+                <div className="flex items-center gap-4">
+                  <div className="h-12 w-12 grid place-items-center border border-gold/60 text-gold">
+                    <Icon size={20} strokeWidth={1.3} />
+                  </div>
+                  <span className="font-serif text-2xl text-gold/60">{step}</span>
+                </div>
+                <h3 className="font-serif text-[1.5rem] leading-tight">{title}</h3>
+                <p className="text-[14px] text-ink/65 leading-[1.8]">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 flex flex-col sm:flex-row gap-4 items-start">
+            <Link to="/contact" className="btn-outline-navy">Κλείσε δωρεάν γνωριμία</Link>
+            <p className="text-[13px] text-ink/55 leading-relaxed sm:pt-4">
+              Χωρίς χρέωση. Χωρίς δεσμεύσεις.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className="bg-navy-gradient text-ivory py-32 lg:py-40 relative overflow-hidden">
         <div className="absolute -left-32 bottom-0 w-[28rem] h-[28rem] rounded-full opacity-[0.05] pointer-events-none"
           style={{ background: "radial-gradient(circle, #C8A96B, transparent 70%)" }} />
@@ -190,6 +231,55 @@ function HomePage() {
                 </span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SOCIAL PROOF */}
+      <section className="bg-champagne text-ink py-24 lg:py-32 border-t border-taupe/20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          {/* counters */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8 mb-20 lg:mb-24">
+            {[
+              { n: "150+", l: "άτομα που εμπιστεύτηκαν τη διαδρομή τους" },
+              { n: "8+", l: "χρόνια εμπειρίας στο coaching" },
+              { n: "NLP", l: "Πιστοποιημένη Practitioner" },
+              { n: "1:1", l: "premium προσωποποιημένη καθοδήγηση" },
+            ].map((c) => (
+              <div key={c.l} className="text-center">
+                <p className="font-serif text-5xl lg:text-6xl text-gold leading-none">{c.n}</p>
+                <p className="mt-4 text-[12px] tracking-[0.18em] uppercase text-ink/60 leading-relaxed max-w-[180px] mx-auto">{c.l}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* testimonials */}
+          <div className="max-w-2xl mb-14">
+            <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Μαρτυρίες</p>
+            <h2 className="font-serif text-3xl lg:text-5xl leading-[1.05] tracking-tight">
+              Άνθρωποι που <em className="not-italic text-gold">άλλαξαν πορεία.</em>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              { quote: "Ξεκίνησα μπερδεμένη και βγήκα από τη συνεργασία με ξεκάθαρους στόχους και — κυρίως — με την πίστη ότι μπορώ να τους πετύχω. Η Αγγελική με βοήθησε να δω τι πραγματικά θέλω.", name: "Μαρία Κ.", role: "Marketing Manager" },
+              { quote: "Ζούσα με χρόνιο άγχος για χρόνια. Σε 3 μήνες δουλειάς έμαθα τεχνικές που χρησιμοποιώ καθημερινά. Νιώθω για πρώτη φορά τον έλεγχο της ζωής μου.", name: "Δημήτρης Π.", role: "Επιχειρηματίας" },
+              { quote: "Πήγα στην Αγγελική για επαγγελματικό προσανατολισμό για τον γιο μου. Η διαδικασία ήταν δομημένη, ανθρώπινη και έδωσε στο παιδί μου ξεκάθαρη κατεύθυνση.", name: "Ελένη Σ.", role: "Μητέρα μαθητή Λυκείου" },
+            ].map((t) => (
+              <div key={t.name} className="bg-ivory border border-taupe/30 p-8 lg:p-10 flex flex-col">
+                <Quote size={28} className="text-gold/70 mb-6" strokeWidth={1.2} />
+                <p className="text-[14.5px] leading-[1.85] text-ink/80 italic flex-1 font-serif">"{t.quote}"</p>
+                <div className="mt-8 pt-6 border-t border-taupe/30">
+                  <p className="font-serif text-[1.05rem] text-navy-deep">{t.name}</p>
+                  <p className="text-[11px] tracking-[0.18em] uppercase text-ink/55 mt-1">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-14 text-center">
+            <Link to="/contact" className="btn-outline-navy">Γίνε η επόμενη ιστορία</Link>
           </div>
         </div>
       </section>
