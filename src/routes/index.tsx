@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Brain, Heart, Compass, Sparkles, ArrowUpRight } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.png";
@@ -124,11 +125,11 @@ function HomePage() {
             <span></span>
             <p className="eyebrow">Προς</p>
             {fromTo.map(([from, to], i) => (
-              <>
-                <p key={`f${i}`} className="text-ivory/85 font-serif text-lg lg:text-xl">{from}</p>
-                <ArrowRight key={`a${i}`} size={18} className="text-gold" strokeWidth={1.2} />
-                <p key={`t${i}`} className="text-gold font-serif text-lg lg:text-xl">{to}</p>
-              </>
+              <Fragment key={i}>
+                <p className="text-ivory/85 font-serif text-lg lg:text-xl">{from}</p>
+                <ArrowRight size={18} className="text-gold" strokeWidth={1.2} />
+                <p className="text-gold font-serif text-lg lg:text-xl">{to}</p>
+              </Fragment>
             ))}
           </div>
         </div>
