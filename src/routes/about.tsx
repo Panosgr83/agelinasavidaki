@@ -22,13 +22,22 @@ const values = [
 ];
 
 const certs = [
-  "Πιστοποιημένη Σύμβουλος Νευρογλωσσικού Προγραμματισμού (NLP)",
-  "Ολιστικό Coaching (Total Coaching)",
-  "Life Coaching",
-  "Executive Coaching",
-  "Relationship Coaching",
-  "Parent Coaching",
-  "Σύμβουλος Επαγγελματικού Προσανατολισμού",
+  "Total Coaching — Life, Executive, Friendship & Parent Coaching (ΚΕ.ΘΕ.ΣΥ, 2024-2025)",
+  "NLP Coaching — Νευρογλωσσικός Προγραμματισμός (ΚΕ.ΘΕ.ΣΥ, 2024-2025)",
+  "Πιστοποιημένη Σύμβουλος Επαγγελματικού Προσανατολισμού & Σταδιοδρομίας — ISON Psychometrica (2024)",
+  "Ειδική Αγωγή & Προαγωγή Ψυχικής Υγείας στο Σχολικό Περιβάλλον — Πανεπιστήμιο Δυτικής Αττικής (2021-2022)",
+  "Συμβουλευτική & Επαγγελματικός Προσανατολισμός — Πανεπιστήμιο Αιγαίου (2022-2023)",
+  "ΔΕΠΥ — Διάσπαση Προσοχής & Τεχνικές Αποκατάστασης (ΚΕ.ΘΕ.ΣΥ, 2023)",
+  "Το Υπερεγώ & οι Μηχανισμοί Άμυνας (ΚΕ.ΘΕ.ΣΥ, 2023)",
+  "Όρια & Θέσπιση Κανόνων στα Παιδιά (ΚΕ.ΘΕ.ΣΥ, 2023)",
+  "Ειδικός Εφαρμογών Διαιτητικής — Δ.Ι.Ε.Κ. Αχαρνών (2002-2004)",
+];
+
+const experience = [
+  { period: "2020 — Σήμερα", role: "Δημόσιες Σχέσεις & Γραμματειακή Υποστήριξη", org: "Κέντρο Ψυχικής Υγείας «ΔΙΑ…ΛΟΓΟΥ ΝΟΗΣΙΣ»" },
+  { period: "2022 — Σήμερα", role: "Πρακτική άσκηση & εποπτεία", org: "Επόπτρια: Κοινωνική Ψυχολόγος-Παιδοψυχολόγος Ευδοκία Τίντζη" },
+  { period: "2022 — Σήμερα", role: "Επιμορφωτικό Πρόγραμμα Ειδικής Αγωγής", org: "Γενική Επόπτρια: ΔΡ. Θεοδώρα Παπαδοπούλου" },
+  { period: "Συνεχώς", role: "Αρθρογράφος", org: "Εφημερίδα «ΓΡΑΜΜΗ» Γαλατσίου" },
 ];
 
 function AboutPage() {
@@ -122,6 +131,28 @@ function AboutPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* EXPERIENCE & SUPERVISION */}
+      <section className="bg-champagne text-ink py-24">
+        <div className="mx-auto max-w-4xl px-6 lg:px-12">
+          <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Επαγγελματική πορεία & Εποπτεία</p>
+          <h2 className="font-serif text-3xl lg:text-4xl mb-12">Πλαίσιο, εποπτεία & αρθρογραφία.</h2>
+          <ul className="space-y-6">
+            {experience.map((e) => (
+              <li key={e.role + e.org} className="grid sm:grid-cols-[180px_1fr] gap-2 sm:gap-8 border-b border-taupe/30 pb-6">
+                <span className="eyebrow !text-[color:var(--navy-deep)]/60 text-[10.5px]">{e.period}</span>
+                <div>
+                  <p className="font-serif text-lg text-navy-deep leading-snug">{e.role}</p>
+                  <p className="text-[14px] text-ink/65 mt-1">{e.org}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-[14px] text-ink/65 italic">
+            Διαβάστε άρθρα μου στην ενότητα <Link to="/arthra" className="text-gold hover:text-navy-deep transition-colors underline underline-offset-4">Άρθρα</Link>.
+          </p>
         </div>
       </section>
 

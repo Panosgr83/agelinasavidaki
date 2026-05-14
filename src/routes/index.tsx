@@ -1,9 +1,10 @@
 import { Fragment } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Brain, Heart, Compass, Sparkles, ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowRight, Brain, Heart, Compass, Sparkles, ArrowUpRight, MapPin, BookOpen } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.png";
 import aboutPortrait from "@/assets/about-portrait.png";
 import { areas } from "@/lib/areas";
+import { articles } from "@/lib/articles";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -237,6 +238,45 @@ function HomePage() {
                 className="border border-taupe/40 px-4 py-4 text-[13px] text-ink/80 hover:border-gold hover:text-navy-deep hover:bg-champagne/40 transition-all text-center"
               >
                 {a.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ARTICLES TEASER */}
+      <section className="bg-champagne text-ink py-24 lg:py-32 border-t border-taupe/20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+            <div>
+              <p className="eyebrow mb-5 inline-flex items-center gap-2 !text-[color:var(--navy-deep)]/60"><BookOpen size={12} /> Άρθρα & Σκέψεις</p>
+              <h2 className="font-serif text-3xl lg:text-5xl leading-[1.05] tracking-tight max-w-2xl">
+                Εργαλεία & ιδέες <em className="not-italic text-gold">για την εξέλιξή σου.</em>
+              </h2>
+            </div>
+            <Link to="/arthra" className="text-[11px] tracking-[0.28em] uppercase text-ink/70 hover:text-gold transition-colors inline-flex items-center gap-2">
+              Όλα τα άρθρα <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {articles.slice(0, 3).map((a) => (
+              <Link
+                key={a.slug}
+                to="/arthra/$slug"
+                params={{ slug: a.slug }}
+                className="group bg-ivory border border-taupe/30 hover:border-gold/60 transition-all flex flex-col"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-champagne">
+                  <img src={a.cover} alt={a.title} loading="lazy" width={1280} height={960} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                </div>
+                <div className="p-7 flex flex-col flex-1">
+                  <p className="eyebrow !text-[color:var(--navy-deep)]/50 mb-3 text-[10px]">{a.category}</p>
+                  <h3 className="font-serif text-lg leading-snug group-hover:text-gold transition-colors">{a.title}</h3>
+                  <p className="mt-3 text-[13.5px] text-ink/65 leading-relaxed flex-1">{a.excerpt}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-[10.5px] tracking-[0.28em] uppercase text-navy-deep group-hover:text-gold transition-colors">
+                    Διάβασε <ArrowUpRight size={13} />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
