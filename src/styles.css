@@ -48,15 +48,16 @@
 :root {
   --radius: 0.25rem;
 
-  /* Brand palette — matched to template */
-  --navy-deep: #0A1A3D;
-  --navy: #0F2350;
-  --gold: #C9A86A;
+  /* Brand palette — exact hex per spec */
+  --navy-deep: #071533;
+  --navy: #0B1D46;
+  --navy-darker: #040A19;
+  --gold: #C8A96B;
   --gold-soft: #DCC089;
-  --ivory: #EDE3D2;
-  --champagne: #E5D8C2;
+  --ivory: #F3EEE6;
+  --champagne: #ECE2CF;
   --taupe: #B8AA98;
-  --ink: #1A1A2E;
+  --ink: #2A2430;
 
   /* Semantic — light/ivory base */
   --background: var(--ivory);
