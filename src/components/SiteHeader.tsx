@@ -31,12 +31,16 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8 lg:px-12 py-3 lg:py-4">
-        <Link to="/" className="flex items-center gap-3 md:gap-4">
-          <img src={logo} alt="Αγγελική Σαββιδάκη" className="h-16 sm:h-20 lg:h-24 w-auto" />
-          <span className="hidden sm:flex flex-col leading-tight">
-            <span className="font-serif text-ivory text-[17px] lg:text-[18px] tracking-wide">Αγγελική Σαββιδάκη</span>
-            <span className="text-[10px] tracking-[0.34em] text-gold uppercase mt-0.5">Life & NLP Coach</span>
-            <span className="text-[10px] lg:text-[11px] text-ivory/65 italic font-serif mt-1 tracking-wide">Σύμβουλος Προσωπικής & Επαγγελματικής Ανάπτυξης</span>
+        <Link to="/" className="flex items-center gap-4 md:gap-5 text-center">
+          {/* Golden ratio φ ≈ 1.618 — logo height : primary text size, primary : secondary */}
+          <img src={logo} alt="Αγγελική Σαββιδάκη" className="h-[68px] sm:h-[84px] lg:h-[100px] w-auto" />
+          <span className="hidden sm:flex flex-col items-center text-center leading-tight">
+            {/* ~100/φ ≈ 21px primary */}
+            <span className="font-serif text-ivory text-[18px] lg:text-[21px] tracking-wide">Αγγελική Σαββιδάκη</span>
+            {/* 21/φ ≈ 13px secondary */}
+            <span className="text-[11px] lg:text-[13px] tracking-[0.34em] text-gold uppercase mt-1">Life & NLP Coach</span>
+            {/* 13/φ ≈ 8px tertiary, bumped slightly for legibility */}
+            <span className="text-[9px] lg:text-[10px] text-ivory/65 italic font-serif mt-1 tracking-wide">Σύμβουλος Προσωπικής & Επαγγελματικής Ανάπτυξης</span>
           </span>
         </Link>
 
