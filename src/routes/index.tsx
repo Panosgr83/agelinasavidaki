@@ -33,32 +33,40 @@ const fromTo = [
 function HomePage() {
   return (
     <>
-      {/* HERO — 21:9 cinematic with portrait as background */}
-      <section className="relative w-full bg-navy-deep text-ivory overflow-hidden pt-24 lg:pt-28">
-        <div className="relative w-full" style={{ aspectRatio: "21 / 9", minHeight: "560px" }}>
+      {/* HERO — cinematic editorial */}
+      <section className="relative w-full bg-[#040A19] text-ivory overflow-hidden">
+        <div className="relative w-full min-h-[92vh] flex items-stretch pt-20 lg:pt-24">
           <img
             src={heroPortrait}
             alt="Αγγελική Σαββιδάκη"
-            className="absolute inset-0 h-full w-full object-cover object-right"
+            className="absolute inset-0 h-full w-full object-cover object-[70%_center] lg:object-[right_center]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1A3D] via-[#0A1A3D]/85 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A3D]/40 via-transparent to-[#0A1A3D]/60" />
-          <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
-            style={{ backgroundImage: "radial-gradient(circle at 15% 50%, #C9A86A 0%, transparent 55%)" }} />
+          <div className="absolute inset-0 hidden md:block bg-hero-overlay" />
+          <div className="absolute inset-0 md:hidden bg-hero-overlay-mobile" />
+          <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
+            style={{ backgroundImage: "radial-gradient(circle at 12% 55%, #C8A96B 0%, transparent 60%)" }} />
 
-          <div className="relative h-full mx-auto max-w-7xl px-6 lg:px-12 flex items-center">
-            <div className="fade-up max-w-xl py-16">
-              <p className="eyebrow mb-5">Life & NLP Coach</p>
-              <h1 className="font-serif text-[2.2rem] sm:text-4xl lg:text-[3.6rem] xl:text-[4rem] leading-[1.05] text-ivory">
+          <div className="relative w-full mx-auto max-w-7xl px-5 md:px-10 lg:px-14 flex items-end md:items-center">
+            <div className="fade-up w-full md:max-w-[640px] lg:max-w-[720px] py-16 md:py-20">
+              <p className="eyebrow mb-6 md:mb-7">Life & NLP Coach</p>
+              <h1
+                className="font-serif text-ivory"
+                style={{
+                  fontSize: "clamp(42px, 7.4vw, 82px)",
+                  lineHeight: 1.04,
+                  letterSpacing: "-0.03em",
+                  fontWeight: 500,
+                }}
+              >
                 Ξαναχτίσε τη ζωή σου<br/>
                 με καθαρότητα,<br/>
-                <em className="not-italic text-gold-gradient">αυτοπεποίθηση</em><br/>
-                και <em className="not-italic text-gold-gradient">κατεύθυνση</em>.
+                <em className="not-italic" style={{ color: "#C8A96B" }}>αυτοπεποίθηση</em><br/>
+                και <em className="not-italic" style={{ color: "#C8A96B" }}>κατεύθυνση</em>.
               </h1>
-              <p className="mt-6 max-w-md text-sm lg:text-base text-ivory/75 leading-relaxed">
+              <p className="mt-7 md:mt-8 max-w-xl text-[15px] md:text-base text-ivory/80 leading-[1.75]">
                 Σε βοηθώ να ξεπεράσεις τα εμπόδια, να ανακαλύψεις τον πραγματικό σου εαυτό και να δημιουργήσεις τη ζωή που αξίζεις.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-9 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-4">
                 <Link to="/contact" className="btn-gold">Κλείσε μια πρώτη συνάντηση</Link>
                 <Link to="/about" className="btn-outline-gold">Μάθε περισσότερα</Link>
               </div>
