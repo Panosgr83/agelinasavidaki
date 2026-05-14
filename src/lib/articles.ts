@@ -9,10 +9,10 @@ export type Article = {
   body: string[];
 };
 
-import coverEphivoi from "@/assets/articles/cover-ep-ephivoi.jpg";
-import coverEnilikes from "@/assets/articles/cover-ep-enilikes.jpg";
-import coverAgkyrosi from "@/assets/articles/cover-agkyrosi.jpg";
-import coverYpoIdiotites from "@/assets/articles/cover-ypo-idiotites.jpg";
+import coverEphivoi from "../assets/articles/cover-ep-ephivoi.jpg";
+import coverEnilikes from "../assets/articles/cover-ep-enilikes.jpg";
+import coverAgkyrosi from "../assets/articles/cover-agkyrosi.jpg";
+import coverYpoIdiotites from "../assets/articles/cover-ypo-idiotites.jpg";
 
 export const articles: Article[] = [
   {
