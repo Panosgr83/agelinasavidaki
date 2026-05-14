@@ -13,12 +13,17 @@ export function SiteFooter() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12 pt-24 pb-16 grid gap-16 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <img src={logo} alt="Angeliki Savvidaki" className="h-24 w-auto mb-8" />
-          <p className="font-serif text-[1.75rem] lg:text-[2rem] leading-[1.2] text-ivory tracking-tight">
+          <img src={logo} alt="Angeliki Savvidaki" className="h-32 lg:h-36 w-auto mb-5" />
+          <p className="font-serif text-ivory text-[15px] tracking-wide">Αγγελική Σαββιδάκη</p>
+          <p className="text-[10px] tracking-[0.34em] text-gold uppercase mt-1">Life & NLP Coach</p>
+          <p className="text-[12px] text-ivory/65 italic font-serif mt-2 tracking-wide max-w-xs">
+            Σύμβουλος Προσωπικής & Επαγγελματικής Ανάπτυξης
+          </p>
+          <p className="font-serif text-[1.6rem] lg:text-[1.85rem] leading-[1.2] text-ivory tracking-tight mt-8">
             Η ζωή που ονειρεύεσαι<br/>
             <em className="not-italic text-gold-gradient">σε περιμένει.</em>
           </p>
-          <p className="mt-5 text-[15px] text-ivory/55 italic font-serif">
+          <p className="mt-4 text-[14px] text-ivory/55 italic font-serif">
             Ας τη δημιουργήσουμε μαζί.
           </p>
         </div>
