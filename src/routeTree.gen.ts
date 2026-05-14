@@ -11,11 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ArthraRouteImport } from './routes/arthra'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PerioxesIndexRouteImport } from './routes/perioxes.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as PerioxesSlugRouteImport } from './routes/perioxes.$slug'
+import { Route as ArthraSlugRouteImport } from './routes/arthra.$slug'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -25,6 +27,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArthraRoute = ArthraRouteImport.update({
+  id: '/arthra',
+  path: '/arthra',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -52,12 +59,19 @@ const PerioxesSlugRoute = PerioxesSlugRouteImport.update({
   path: '/perioxes/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArthraSlugRoute = ArthraSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ArthraRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/arthra': typeof ArthraRouteWithChildren
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
+  '/arthra/$slug': typeof ArthraSlugRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/perioxes/': typeof PerioxesIndexRoute
@@ -65,8 +79,10 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/arthra': typeof ArthraRouteWithChildren
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
+  '/arthra/$slug': typeof ArthraSlugRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/perioxes': typeof PerioxesIndexRoute
@@ -75,8 +91,10 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/arthra': typeof ArthraRouteWithChildren
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRouteWithChildren
+  '/arthra/$slug': typeof ArthraSlugRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/perioxes/': typeof PerioxesIndexRoute
@@ -86,8 +104,10 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/arthra'
     | '/contact'
     | '/services'
+    | '/arthra/$slug'
     | '/perioxes/$slug'
     | '/services/$slug'
     | '/perioxes/'
@@ -95,8 +115,10 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/arthra'
     | '/contact'
     | '/services'
+    | '/arthra/$slug'
     | '/perioxes/$slug'
     | '/services/$slug'
     | '/perioxes'
@@ -104,8 +126,10 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/arthra'
     | '/contact'
     | '/services'
+    | '/arthra/$slug'
     | '/perioxes/$slug'
     | '/services/$slug'
     | '/perioxes/'
@@ -114,6 +138,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ArthraRoute: typeof ArthraRouteWithChildren
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   PerioxesSlugRoute: typeof PerioxesSlugRoute
@@ -134,6 +159,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arthra': {
+      id: '/arthra'
+      path: '/arthra'
+      fullPath: '/arthra'
+      preLoaderRoute: typeof ArthraRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -171,8 +203,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PerioxesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/arthra/$slug': {
+      id: '/arthra/$slug'
+      path: '/$slug'
+      fullPath: '/arthra/$slug'
+      preLoaderRoute: typeof ArthraSlugRouteImport
+      parentRoute: typeof ArthraRoute
+    }
   }
 }
+
+interface ArthraRouteChildren {
+  ArthraSlugRoute: typeof ArthraSlugRoute
+}
+
+const ArthraRouteChildren: ArthraRouteChildren = {
+  ArthraSlugRoute: ArthraSlugRoute,
+}
+
+const ArthraRouteWithChildren =
+  ArthraRoute._addFileChildren(ArthraRouteChildren)
 
 interface ServicesRouteChildren {
   ServicesSlugRoute: typeof ServicesSlugRoute
@@ -189,6 +239,7 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ArthraRoute: ArthraRouteWithChildren,
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRouteWithChildren,
   PerioxesSlugRoute: PerioxesSlugRoute,
@@ -197,3 +248,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
