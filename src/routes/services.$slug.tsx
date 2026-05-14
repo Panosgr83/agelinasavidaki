@@ -448,7 +448,7 @@ function ServiceDetail() {
                   <h2 className="font-serif text-2xl lg:text-3xl">Για ποιον είναι</h2>
                 </div>
                 <ul className="space-y-4">
-                  {service.forWhom.map((w) => (
+                  {service.forWhom.map((w: string) => (
                     <li key={w} className="flex items-start gap-3 text-[15px] text-ink/80 leading-[1.75]">
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
                       {w}
@@ -466,7 +466,7 @@ function ServiceDetail() {
                   <h2 className="font-serif text-2xl lg:text-3xl">Τι θα κερδίσεις σε 3-6 μήνες</h2>
                 </div>
                 <ul className="space-y-4">
-                  {service.outcomes.map((o) => (
+                  {service.outcomes.map((o: string) => (
                     <li key={o} className="flex items-start gap-3 text-[15px] text-ink/80 leading-[1.75]">
                       <Check size={16} className="text-gold mt-1 shrink-0" strokeWidth={1.5} />
                       {o}
