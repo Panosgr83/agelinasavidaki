@@ -33,34 +33,35 @@ const fromTo = [
 function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative min-h-screen bg-navy-gradient text-ivory overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
-          style={{ backgroundImage: "radial-gradient(circle at 15% 30%, #C8A96B 0%, transparent 50%), radial-gradient(circle at 85% 70%, #C8A96B 0%, transparent 50%)" }} />
+      {/* HERO — 21:9 cinematic with portrait as background */}
+      <section className="relative w-full bg-navy-deep text-ivory overflow-hidden pt-24 lg:pt-28">
+        <div className="relative w-full" style={{ aspectRatio: "21 / 9", minHeight: "560px" }}>
+          <img
+            src={heroPortrait}
+            alt="Αγγελική Σαββιδάκη"
+            className="absolute inset-0 h-full w-full object-cover object-right"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1A3D] via-[#0A1A3D]/85 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A3D]/40 via-transparent to-[#0A1A3D]/60" />
+          <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
+            style={{ backgroundImage: "radial-gradient(circle at 15% 50%, #C9A86A 0%, transparent 55%)" }} />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-12 pt-36 pb-20 lg:pt-44 lg:pb-32 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="fade-up">
-            <p className="eyebrow mb-6">Life & NLP Coach</p>
-            <h1 className="font-serif text-[2.6rem] sm:text-5xl lg:text-[4.2rem] leading-[1.05] text-ivory">
-              Ξαναχτίσε τη ζωή σου<br/>
-              με καθαρότητα,<br/>
-              <em className="not-italic text-gold-gradient">αυτοπεποίθηση</em><br/>
-              και <em className="not-italic text-gold-gradient">κατεύθυνση</em>.
-            </h1>
-            <p className="mt-8 max-w-md text-base text-ivory/70 leading-relaxed">
-              Σε βοηθώ να ξεπεράσεις τα εμπόδια, να ανακαλύψεις τον πραγματικό σου εαυτό και να δημιουργήσεις τη ζωή που αξίζεις.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/contact" className="btn-gold">Κλείσε μια πρώτη συνάντηση</Link>
-              <Link to="/about" className="btn-outline-gold">Μάθε περισσότερα</Link>
-            </div>
-          </div>
-
-          <div className="relative fade-up reveal-delay-2">
-            <div className="absolute -inset-4 border border-gold/30 translate-x-6 translate-y-6 hidden lg:block" />
-            <div className="relative aspect-[4/5] overflow-hidden">
-              <img src={heroPortrait} alt="Αγγελική Σαββιδάκη" className="h-full w-full object-cover object-center" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-navy-deep/40 via-transparent to-transparent" />
+          <div className="relative h-full mx-auto max-w-7xl px-6 lg:px-12 flex items-center">
+            <div className="fade-up max-w-xl py-16">
+              <p className="eyebrow mb-5">Life & NLP Coach</p>
+              <h1 className="font-serif text-[2.2rem] sm:text-4xl lg:text-[3.6rem] xl:text-[4rem] leading-[1.05] text-ivory">
+                Ξαναχτίσε τη ζωή σου<br/>
+                με καθαρότητα,<br/>
+                <em className="not-italic text-gold-gradient">αυτοπεποίθηση</em><br/>
+                και <em className="not-italic text-gold-gradient">κατεύθυνση</em>.
+              </h1>
+              <p className="mt-6 max-w-md text-sm lg:text-base text-ivory/75 leading-relaxed">
+                Σε βοηθώ να ξεπεράσεις τα εμπόδια, να ανακαλύψεις τον πραγματικό σου εαυτό και να δημιουργήσεις τη ζωή που αξίζεις.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link to="/contact" className="btn-gold">Κλείσε μια πρώτη συνάντηση</Link>
+                <Link to="/about" className="btn-outline-gold">Μάθε περισσότερα</Link>
+              </div>
             </div>
           </div>
         </div>
