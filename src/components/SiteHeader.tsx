@@ -24,15 +24,17 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-[#071533]/85 backdrop-blur-md border-b border-gold/15" : "bg-transparent"
+        scrolled
+          ? "bg-[rgba(4,10,25,0.88)] backdrop-blur-[14px] border-b border-gold/15"
+          : "bg-[rgba(4,10,25,0.45)] backdrop-blur-[6px]"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8 lg:px-12 py-5 lg:py-6">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Αγγελική Σαββιδάκη" className="h-12 w-auto" />
+          <img src={logo} alt="Αγγελική Σαββιδάκη" className="h-14 lg:h-16 w-auto" />
           <span className="hidden sm:flex flex-col leading-tight">
-            <span className="font-serif text-ivory text-base tracking-wide">Αγγελική Σαββιδάκη</span>
-            <span className="text-[10px] tracking-[0.32em] text-gold uppercase">Life & NLP Coach</span>
+            <span className="font-serif text-ivory text-[17px] tracking-wide">Αγγελική Σαββιδάκη</span>
+            <span className="text-[10px] tracking-[0.34em] text-gold uppercase mt-0.5">Life & NLP Coach</span>
           </span>
         </Link>
 
@@ -41,8 +43,8 @@ export function SiteHeader() {
             <Link
               key={n.to}
               to={n.to}
-              className="text-[11px] tracking-[0.28em] uppercase text-ivory/80 hover:text-gold transition-colors"
-              activeProps={{ className: "text-[11px] tracking-[0.28em] uppercase text-gold" }}
+              className="text-[13px] tracking-[0.12em] uppercase font-semibold text-ivory/85 hover:text-gold transition-colors"
+              activeProps={{ className: "text-[13px] tracking-[0.12em] uppercase font-semibold text-gold" }}
               activeOptions={{ exact: n.to === "/" }}
             >
               {n.label}
@@ -50,7 +52,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link to="/contact" className="hidden lg:inline-flex btn-outline-gold !py-3 !px-6 !text-[10px]">
+        <Link to="/contact" className="hidden lg:inline-flex btn-outline-gold !py-3 !px-6 !text-[11px]">
           Κλείσε Συνάντηση
         </Link>
 
