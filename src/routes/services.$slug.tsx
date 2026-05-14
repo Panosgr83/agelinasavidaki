@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, Users, Target } from "lucide-react";
 
 type Service = {
   title: string;
@@ -11,6 +11,8 @@ type Service = {
   howTitle?: string;
   how?: string[];
   benefits: string[];
+  forWhom?: string[];
+  outcomes?: string[];
 };
 
 const services: Record<string, Service> = {
