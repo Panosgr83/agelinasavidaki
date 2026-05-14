@@ -373,7 +373,7 @@ function ServiceDetail() {
           <p className="text-[16px] leading-[1.85] text-ink/85 mb-10">{service.sectionBody}</p>
 
           <div className="space-y-6 text-[16px] lg:text-[17px] leading-[1.85] text-ink/85 border-t border-taupe/30 pt-10">
-            {service.body.map((p, i) => (
+            {service.body.map((p: string, i: number) => (
               <p key={i}>{p}</p>
             ))}
           </div>
