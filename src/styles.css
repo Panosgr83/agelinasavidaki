@@ -49,9 +49,9 @@
   --radius: 0.25rem;
 
   /* Brand palette — exact hex per spec */
-  --navy-deep: #03081A;
-  --navy: #050D24;
-  --navy-darker: #01030A;
+  --navy-deep: #0A1228;
+  --navy: #0E1A35;
+  --navy-darker: #060B1C;
   --gold: #C8A96B;
   --gold-soft: #DCC089;
   --ivory: #F3EEE6;
@@ -106,7 +106,7 @@
 
 @layer utilities {
   .bg-navy-gradient {
-    background: linear-gradient(135deg, #01030A 0%, #03081A 50%, #01030A 100%);
+    background: linear-gradient(135deg, #060B1C 0%, #0A1228 50%, #060B1C 100%);
   }
   .bg-hero-overlay {
     background:
