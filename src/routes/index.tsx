@@ -127,13 +127,13 @@ function HomePage() {
           style={{ background: "radial-gradient(circle, #C8A96B, transparent 70%)" }} />
         <div className="relative mx-auto max-w-7xl px-5 md:px-8 lg:px-12 grid lg:grid-cols-[1fr_1.4fr] gap-14 lg:gap-20 items-start">
           <div>
-            <p className="eyebrow mb-6">Από τη στασιμότητα στην εξέλιξη</p>
+            <p className="eyebrow mb-6">Εάν επιθυμείς την αλλαγή… υπάρχουν τρόποι</p>
             <h2 className="font-serif text-4xl lg:text-5xl leading-tight">
               Η αλλαγή ξεκινά<br/>
               <em className="not-italic text-gold-gradient">από μέσα σου.</em>
             </h2>
             <p className="mt-6 max-w-md text-ivory/70 text-[15px] leading-relaxed">
-              Μαζί, μετατρέπουμε την αβεβαιότητα σε δύναμη και τη σύγχυση σε προορισμό.
+              Όταν υπάρχει η πρόθεση, υπάρχουν και οι τρόποι. Μαζί μετατρέπουμε την αβεβαιότητα σε δύναμη και τη σύγχυση σε προορισμό.
             </p>
             <Link to="/services" className="btn-outline-gold mt-10">Δες περισσότερα</Link>
           </div>

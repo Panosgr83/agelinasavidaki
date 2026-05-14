@@ -20,11 +20,11 @@ export function SiteFooter() {
             Σύμβουλος Προσωπικής & Επαγγελματικής Ανάπτυξης
           </p>
           <p className="font-serif text-[27px] lg:text-[34px] leading-[1.2] text-ivory tracking-tight mt-[34px]">
-            Η ζωή που ονειρεύεσαι<br/>
-            <em className="not-italic text-gold-gradient">σε περιμένει.</em>
+            Εάν επιθυμείς την αλλαγή<br/>
+            <em className="not-italic text-gold-gradient">υπάρχουν τρόποι.</em>
           </p>
           <p className="mt-[21px] text-[13px] lg:text-[14px] text-ivory/55 italic font-serif">
-            Ας τη δημιουργήσουμε μαζί.
+            Όταν υπάρχει η πρόθεση, υπάρχει και ο δρόμος.
           </p>
         </div>
 
