@@ -13,7 +13,7 @@ export function SiteFooter() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12 pt-24 pb-16 grid gap-16 md:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4 flex flex-col items-center text-center">
-          <img src={logo} alt="Angeliki Savvidaki" className="h-20 lg:h-24 w-auto mb-4 object-contain" />
+          <img src={logo} alt="Angeliki Savvidaki" className="w-44 lg:w-56 aspect-[4/3] object-cover object-center -my-6 lg:-my-8" />
           <p className="font-serif text-ivory text-[15px] tracking-wide">Αγγελική Σαββιδάκη</p>
           <p className="text-[10px] tracking-[0.34em] text-gold uppercase mt-1">Life & NLP Coach</p>
           <p className="text-[12px] text-ivory/65 italic font-serif mt-2 tracking-wide max-w-xs">
