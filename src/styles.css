@@ -163,21 +163,24 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.95rem 2rem;
+    padding: 18px 34px;
     font-family: var(--font-sans);
     font-size: 0.72rem;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--gold);
     background: transparent;
     border: 1px solid var(--gold);
-    transition: all 320ms cubic-bezier(.2,.7,.2,1);
+    border-radius: 0;
+    transition: all 380ms cubic-bezier(.2,.7,.2,1);
     cursor: pointer;
   }
   .btn-outline-gold:hover {
-    background: var(--gold);
-    color: var(--navy-deep);
+    background: rgba(200,169,107,0.08);
+    color: var(--gold-soft);
+    border-color: var(--gold-soft);
+  }
   }
   .btn-outline-navy {
     display: inline-flex;
