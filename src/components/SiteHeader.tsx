@@ -1,0 +1,85 @@
+import { Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo-light.png";
+
+const nav = [
+  { to: "/", label: "Αρχική" },
+  { to: "/about", label: "Σχετικά" },
+  { to: "/services", label: "Υπηρεσίες" },
+  { to: "/contact", label: "Επικοινωνία" },
+] as const;
+
+export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled ? "bg-[#071533]/85 backdrop-blur-md border-b border-gold/15" : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="Αγγελική Σαββιδάκη" className="h-12 w-auto" />
+          <span className="hidden sm:flex flex-col leading-tight">
+            <span className="font-serif text-ivory text-base tracking-wide">Αγγελική Σαββιδάκη</span>
+            <span className="text-[10px] tracking-[0.32em] text-gold uppercase">Life & NLP Coach</span>
+          </span>
+        </Link>
+
+        <nav className="hidden lg:flex items-center gap-10">
+          {nav.map((n) => (
+            <Link
+              key={n.to}
+              to={n.to}
+              className="text-[11px] tracking-[0.28em] uppercase text-ivory/80 hover:text-gold transition-colors"
+              activeProps={{ className: "text-[11px] tracking-[0.28em] uppercase text-gold" }}
+              activeOptions={{ exact: n.to === "/" }}
+            >
+              {n.label}
+            </Link>
+          ))}
+        </nav>
+
+        <Link to="/contact" className="hidden lg:inline-flex btn-outline-gold !py-3 !px-6 !text-[10px]">
+          Κλείσε Συνάντηση
+        </Link>
+
+        <button
+          aria-label="Menu"
+          className="lg:hidden text-ivory"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
+      {open && (
+        <div className="lg:hidden bg-[#071533] border-t border-gold/15 px-6 py-6 space-y-4">
+          {nav.map((n) => (
+            <Link
+              key={n.to}
+              to={n.to}
+              onClick={() => setOpen(false)}
+              className="block text-sm tracking-[0.28em] uppercase text-ivory/85 hover:text-gold"
+            >
+              {n.label}
+            </Link>
+          ))}
+          <Link to="/contact" onClick={() => setOpen(false)} className="btn-outline-gold w-full">
+            Κλείσε Συνάντηση
+          </Link>
+        </div>
+      )}
+    </header>
+  );
+}
