@@ -17,9 +17,9 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { slug: "life-coaching", title: "Life Coaching", desc: "Προσωπική ανάπτυξη, ισορροπία και συνειδητή καθημερινότητα." },
-  { slug: "nlp", title: "NLP & Mindset", desc: "Αλλαγή περιοριστικών πεποιθήσεων με τεχνικές νευρογλωσσικού προγραμματισμού." },
-  { slug: "executive-coaching", title: "Executive Coaching", desc: "Ηγεσία, στρατηγική σκέψη και επαγγελματική εξέλιξη." },
+  { slug: "life-coaching", title: "1:1 Coaching", desc: "Προσωποποιημένες συνεδρίες για να δουλέψουμε σε ό,τι σε κρατά πίσω και να δημιουργήσουμε το μέλλον που επιθυμείς." },
+  { slug: "nlp", title: "NLP & Mindset", desc: "Απελευθερώνουμε περιοριστικές πεποιθήσεις και χτίζουμε ένα δυνατό, ευέλικτο και νικηφόρο mindset." },
+  { slug: "executive-coaching", title: "Life Strategy", desc: "Θέτουμε ξεκάθαρους στόχους και σχεδιάζουμε τη στρατηγική για μια ζωή με νόημα και κατεύθυνση." },
 ];
 
 const fromTo = [
