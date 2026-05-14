@@ -85,7 +85,7 @@ function AreaPage() {
 
       <section className="bg-ivory text-ink py-24 lg:py-32">
         <div className="mx-auto max-w-3xl px-6 lg:px-0 space-y-8">
-          {area.body.map((p, i) => (
+          {area.body.map((p: string, i: number) => (
             <p key={i} className="text-[16px] lg:text-[17px] leading-[1.9] text-ink/80">{p}</p>
           ))}
           <div className="hairline opacity-40 my-12" />
