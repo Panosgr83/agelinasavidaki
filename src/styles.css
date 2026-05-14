@@ -109,10 +109,29 @@
     background: linear-gradient(135deg, #040A19 0%, #071533 55%, #040A19 100%);
   }
   .bg-hero-overlay {
-    background: linear-gradient(90deg, rgba(4,10,25,0.94) 0%, rgba(4,10,25,0.82) 38%, rgba(4,10,25,0.30) 60%, rgba(4,10,25,0.05) 100%);
+    background:
+      radial-gradient(ellipse 80% 90% at 75% 45%, transparent 0%, rgba(2,6,18,0.35) 60%, rgba(2,6,18,0.85) 100%),
+      linear-gradient(90deg, rgba(2,6,18,0.97) 0%, rgba(2,6,18,0.88) 32%, rgba(2,6,18,0.45) 55%, rgba(2,6,18,0.10) 78%, rgba(2,6,18,0.35) 100%);
   }
   .bg-hero-overlay-mobile {
-    background: linear-gradient(180deg, rgba(4,10,25,0.05) 0%, rgba(4,10,25,0.15) 38%, rgba(4,10,25,0.78) 70%, rgba(4,10,25,0.96) 100%);
+    background:
+      radial-gradient(ellipse 110% 60% at 50% 22%, transparent 0%, rgba(2,6,18,0.10) 50%, rgba(2,6,18,0.55) 100%),
+      linear-gradient(180deg, rgba(2,6,18,0.20) 0%, rgba(2,6,18,0.10) 30%, rgba(2,6,18,0.55) 62%, rgba(2,6,18,0.92) 82%, rgba(2,6,18,0.99) 100%);
+  }
+  .hero-vignette {
+    background: radial-gradient(ellipse 120% 90% at 50% 50%, transparent 40%, rgba(0,0,0,0.55) 100%);
+  }
+  .luxury-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(200,169,107,0.18);
+    backdrop-filter: blur(2px);
+    transition: all 500ms cubic-bezier(.2,.7,.2,1);
+  }
+  .luxury-card:hover {
+    border-color: rgba(200,169,107,0.75);
+    background: rgba(200,169,107,0.04);
+    box-shadow: 0 30px 60px -25px rgba(0,0,0,0.7), inset 0 1px 0 rgba(200,169,107,0.15);
+    transform: translateY(-4px);
   }
   .bg-gold-gradient {
     background: linear-gradient(135deg, #C8A96B 0%, #E0C58F 50%, #B8924F 100%);
@@ -201,16 +220,6 @@
   .btn-outline-navy:hover {
     background: var(--navy-deep);
     color: var(--ivory);
-  }
-  .luxury-card {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(200,169,107,0.25);
-    transition: all 400ms cubic-bezier(.2,.7,.2,1);
-  }
-  .luxury-card:hover {
-    border-color: rgba(200,169,107,0.65);
-    box-shadow: 0 20px 40px -20px rgba(7,21,51,0.5), 0 0 0 1px rgba(200,169,107,0.1);
-    transform: translateY(-3px);
   }
   .luxury-card-light {
     background: #FFFFFF;
