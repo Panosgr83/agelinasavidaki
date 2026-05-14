@@ -106,7 +106,7 @@
 
 @layer utilities {
   .bg-navy-gradient {
-    background: linear-gradient(135deg, #040A19 0%, #071533 55%, #040A19 100%);
+    background: linear-gradient(135deg, #01030A 0%, #03081A 50%, #01030A 100%);
   }
   .bg-hero-overlay {
     background:
