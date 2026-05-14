@@ -44,9 +44,9 @@ export function SiteFooter() {
         <div className="lg:col-span-3">
           <h4 className="eyebrow mb-6">Επικοινωνία</h4>
           <ul className="space-y-4 text-[14px] text-ivory/70 font-light">
-            <li className="flex items-center gap-3"><Phone size={13} strokeWidth={1.4} className="text-gold" /> +30 690 000 0000</li>
-            <li className="flex items-center gap-3"><Mail size={13} strokeWidth={1.4} className="text-gold" /> info@angelikisavvidaki.gr</li>
-            <li className="flex items-center gap-3"><MapPin size={13} strokeWidth={1.4} className="text-gold" /> Αθήνα, Ελλάδα</li>
+            <li className="flex items-center gap-3"><Phone size={13} strokeWidth={1.4} className="text-gold" /><span>+30 690 000 0000</span></li>
+            <li className="flex items-center gap-3"><Mail size={13} strokeWidth={1.4} className="text-gold" /><span>info@angelikisavvidaki.gr</span></li>
+            <li className="flex items-center gap-3"><MapPin size={13} strokeWidth={1.4} className="text-gold" /><span>Αθήνα, Ελλάδα</span></li>
           </ul>
           <div className="mt-8 flex gap-3">
             <a href="#" aria-label="Instagram" className="h-11 w-11 grid place-items-center border border-gold/35 text-gold hover:bg-gold hover:text-navy-deep hover:border-gold transition-all">
