@@ -146,6 +146,42 @@ function ContactPage() {
         </div>
       </section>
 
+      {/* MAP */}
+      <section className="bg-ivory text-ink pb-24 lg:pb-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-14 items-start">
+            <div>
+              <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Πού θα με βρεις</p>
+              <h2 className="font-serif text-3xl lg:text-4xl leading-tight">
+                Δήλου 2, <em className="not-italic text-gold">Γαλάτσι</em>
+              </h2>
+              <p className="mt-5 text-[15px] text-ink/70 leading-[1.85]">
+                Δήλου 2, 11146 Γαλάτσι, Αθήνα. Δια ζώσης συνεδρίες σε προσωπικό και διακριτικό χώρο — με δυνατότητα online για όσους προτιμούν.
+              </p>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=%CE%94%CE%AE%CE%BB%CE%BF%CF%85+2,+11146+%CE%93%CE%B1%CE%BB%CE%AC%CF%84%CF%83%CE%B9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-gold mt-8 inline-flex"
+              >
+                Οδηγίες πρόσβασης
+              </a>
+            </div>
+            <div className="border border-taupe/40 overflow-hidden shadow-sm">
+              <iframe
+                title="Χάρτης — Δήλου 2, 11146 Γαλάτσι"
+                src="https://www.google.com/maps?q=%CE%94%CE%AE%CE%BB%CE%BF%CF%85%202,%2011146%20%CE%93%CE%B1%CE%BB%CE%AC%CF%84%CF%83%CE%B9&output=embed"
+                width="100%"
+                height="420"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                style={{ border: 0 }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-champagne text-ink py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-12">
