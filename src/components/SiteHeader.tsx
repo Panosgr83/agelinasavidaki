@@ -7,6 +7,7 @@ const nav = [
   { to: "/", label: "Αρχική" },
   { to: "/about", label: "Σχετικά" },
   { to: "/services", label: "Υπηρεσίες" },
+  { to: "/arthra", label: "Άρθρα" },
   { to: "/contact", label: "Επικοινωνία" },
 ] as const;
 

@@ -34,6 +34,7 @@ export function SiteFooter() {
             <li><Link to="/" className="hover:text-gold transition-colors">Αρχική</Link></li>
             <li><Link to="/about" className="hover:text-gold transition-colors">Σχετικά</Link></li>
             <li><Link to="/services" className="hover:text-gold transition-colors">Υπηρεσίες</Link></li>
+            <li><Link to="/arthra" className="hover:text-gold transition-colors">Άρθρα</Link></li>
             <li><Link to="/contact" className="hover:text-gold transition-colors">Επικοινωνία</Link></li>
           </ul>
         </div>
