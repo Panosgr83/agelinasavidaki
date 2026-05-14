@@ -235,6 +235,55 @@ function HomePage() {
         </div>
       </section>
 
+      {/* SOCIAL PROOF */}
+      <section className="bg-champagne text-ink py-24 lg:py-32 border-t border-taupe/20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+          {/* counters */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8 mb-20 lg:mb-24">
+            {[
+              { n: "150+", l: "άτομα που εμπιστεύτηκαν τη διαδρομή τους" },
+              { n: "8+", l: "χρόνια εμπειρίας στο coaching" },
+              { n: "NLP", l: "Πιστοποιημένη Practitioner" },
+              { n: "1:1", l: "premium προσωποποιημένη καθοδήγηση" },
+            ].map((c) => (
+              <div key={c.l} className="text-center">
+                <p className="font-serif text-5xl lg:text-6xl text-gold leading-none">{c.n}</p>
+                <p className="mt-4 text-[12px] tracking-[0.18em] uppercase text-ink/60 leading-relaxed max-w-[180px] mx-auto">{c.l}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* testimonials */}
+          <div className="max-w-2xl mb-14">
+            <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Μαρτυρίες</p>
+            <h2 className="font-serif text-3xl lg:text-5xl leading-[1.05] tracking-tight">
+              Άνθρωποι που <em className="not-italic text-gold">άλλαξαν πορεία.</em>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              { quote: "Ξεκίνησα μπερδεμένη και βγήκα από τη συνεργασία με ξεκάθαρους στόχους και — κυρίως — με την πίστη ότι μπορώ να τους πετύχω. Η Αγγελική με βοήθησε να δω τι πραγματικά θέλω.", name: "Μαρία Κ.", role: "Marketing Manager" },
+              { quote: "Ζούσα με χρόνιο άγχος για χρόνια. Σε 3 μήνες δουλειάς έμαθα τεχνικές που χρησιμοποιώ καθημερινά. Νιώθω για πρώτη φορά τον έλεγχο της ζωής μου.", name: "Δημήτρης Π.", role: "Επιχειρηματίας" },
+              { quote: "Πήγα στην Αγγελική για επαγγελματικό προσανατολισμό για τον γιο μου. Η διαδικασία ήταν δομημένη, ανθρώπινη και έδωσε στο παιδί μου ξεκάθαρη κατεύθυνση.", name: "Ελένη Σ.", role: "Μητέρα μαθητή Λυκείου" },
+            ].map((t) => (
+              <div key={t.name} className="bg-ivory border border-taupe/30 p-8 lg:p-10 flex flex-col">
+                <Quote size={28} className="text-gold/70 mb-6" strokeWidth={1.2} />
+                <p className="text-[14.5px] leading-[1.85] text-ink/80 italic flex-1 font-serif">"{t.quote}"</p>
+                <div className="mt-8 pt-6 border-t border-taupe/30">
+                  <p className="font-serif text-[1.05rem] text-navy-deep">{t.name}</p>
+                  <p className="text-[11px] tracking-[0.18em] uppercase text-ink/55 mt-1">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-14 text-center">
+            <Link to="/contact" className="btn-outline-navy">Γίνε η επόμενη ιστορία</Link>
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT TEASER */}
       <section className="bg-ivory text-ink py-28 lg:py-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
