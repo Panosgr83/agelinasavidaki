@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agelinasavidaki.lovable.app/sitemap.xml
