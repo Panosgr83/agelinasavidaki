@@ -436,9 +436,48 @@ function ServiceDetail() {
         </div>
       </section>
 
-      <section className="bg-champagne text-ink py-24">
-        <div className="mx-auto max-w-5xl px-6 lg:px-12">
-          <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Τα οφέλη</p>
+      {(service.forWhom || service.outcomes) && (
+        <section className="bg-ivory text-ink py-20 lg:py-24 border-t border-taupe/30">
+          <div className="mx-auto max-w-5xl px-6 lg:px-12 grid md:grid-cols-2 gap-10 lg:gap-16">
+            {service.forWhom && (
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-10 w-10 grid place-items-center border border-gold/60 text-gold">
+                    <Users size={18} strokeWidth={1.3} />
+                  </div>
+                  <h2 className="font-serif text-2xl lg:text-3xl">Για ποιον είναι</h2>
+                </div>
+                <ul className="space-y-4">
+                  {service.forWhom.map((w) => (
+                    <li key={w} className="flex items-start gap-3 text-[15px] text-ink/80 leading-[1.75]">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
+                      {w}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {service.outcomes && (
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-10 w-10 grid place-items-center border border-gold/60 text-gold">
+                    <Target size={18} strokeWidth={1.3} />
+                  </div>
+                  <h2 className="font-serif text-2xl lg:text-3xl">Τι θα κερδίσεις σε 3-6 μήνες</h2>
+                </div>
+                <ul className="space-y-4">
+                  {service.outcomes.map((o) => (
+                    <li key={o} className="flex items-start gap-3 text-[15px] text-ink/80 leading-[1.75]">
+                      <Check size={16} className="text-gold mt-1 shrink-0" strokeWidth={1.5} />
+                      {o}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
           <h2 className="font-serif text-3xl lg:text-4xl mb-12">Τι θα κερδίσεις από τη συνεργασία μας.</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {service.benefits.map((b: string) => (
