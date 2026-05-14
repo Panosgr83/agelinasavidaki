@@ -140,23 +140,23 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.95rem 2rem;
+    padding: 18px 34px;
     font-family: var(--font-sans);
     font-size: 0.72rem;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 500;
-    color: var(--navy-deep);
-    background: var(--gold);
-    border: 1px solid var(--gold);
-    transition: all 320ms cubic-bezier(.2,.7,.2,1);
+    font-weight: 600;
+    color: #071533;
+    background: #C8A96B;
+    border: 1px solid #C8A96B;
+    border-radius: 0;
+    transition: all 380ms cubic-bezier(.2,.7,.2,1);
     cursor: pointer;
   }
   .btn-gold:hover {
-    background: var(--gold-soft);
-    border-color: var(--gold-soft);
-    transform: translateY(-1px);
-    box-shadow: 0 12px 30px -12px rgba(200,169,107,0.5);
+    background: #DCC089;
+    border-color: #DCC089;
+    box-shadow: 0 0 0 1px rgba(200,169,107,0.35), 0 18px 40px -18px rgba(200,169,107,0.55);
   }
   .btn-outline-gold {
     display: inline-flex;
