@@ -34,7 +34,7 @@ export function SiteHeader() {
         <Link to="/" className="flex items-center gap-3 md:gap-4">
           <img src={logo} alt="Αγγελική Σαββιδάκη" className="h-16 sm:h-20 lg:h-24 w-auto" />
           <span className="hidden sm:flex flex-col leading-tight">
-            <span className="font-serif text-ivory text-[17px] lg:text-[18px] tracking-wide">Αγγελική Σαββιδάκη</span>
+            <span className="text-[10px] lg:text-[11px] text-ivory/65 italic font-serif mt-1 tracking-wide text-center">Αγγελική Σαββιδάκη</span>
             <span className="text-[10px] tracking-[0.34em] text-gold uppercase mt-0.5">Life & NLP Coach</span>
             <span className="text-[10px] lg:text-[11px] text-ivory/65 italic font-serif mt-1 tracking-wide">Σύμβουλος Προσωπικής & Επαγγελματικής Ανάπτυξης</span>
           </span>
