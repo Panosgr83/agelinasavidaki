@@ -134,6 +134,28 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* EXPERIENCE & SUPERVISION */}
+      <section className="bg-champagne text-ink py-24">
+        <div className="mx-auto max-w-4xl px-6 lg:px-12">
+          <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Επαγγελματική πορεία & Εποπτεία</p>
+          <h2 className="font-serif text-3xl lg:text-4xl mb-12">Πλαίσιο, εποπτεία & αρθρογραφία.</h2>
+          <ul className="space-y-6">
+            {experience.map((e) => (
+              <li key={e.role + e.org} className="grid sm:grid-cols-[180px_1fr] gap-2 sm:gap-8 border-b border-taupe/30 pb-6">
+                <span className="eyebrow !text-[color:var(--navy-deep)]/60 text-[10.5px]">{e.period}</span>
+                <div>
+                  <p className="font-serif text-lg text-navy-deep leading-snug">{e.role}</p>
+                  <p className="text-[14px] text-ink/65 mt-1">{e.org}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-[14px] text-ink/65 italic">
+            Διαβάστε άρθρα μου στην ενότητα <Link to="/arthra" className="text-gold hover:text-navy-deep transition-colors underline underline-offset-4">Άρθρα</Link>.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-navy-deep text-ivory py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
