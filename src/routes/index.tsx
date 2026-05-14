@@ -145,34 +145,37 @@ function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section className="bg-ivory text-ink py-28 lg:py-36">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+      <section className="bg-navy-gradient text-ivory py-32 lg:py-40 relative overflow-hidden">
+        <div className="absolute -left-32 bottom-0 w-[28rem] h-[28rem] rounded-full opacity-[0.05] pointer-events-none"
+          style={{ background: "radial-gradient(circle, #C8A96B, transparent 70%)" }} />
+        <div className="relative mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 lg:mb-20">
             <div>
-              <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Προγράμματα & Συνεδρίες</p>
-              <h2 className="font-serif text-4xl lg:text-5xl leading-tight max-w-xl">
+              <p className="eyebrow mb-6">Προγράμματα & Συνεδρίες</p>
+              <h2 className="font-serif text-4xl lg:text-5xl xl:text-[3.4rem] leading-[1.05] tracking-tight max-w-xl">
                 Επιλεγμένες υπηρεσίες<br/>
                 για <em className="not-italic text-gold">βαθιά αλλαγή.</em>
               </h2>
             </div>
-            <Link to="/services" className="text-[11px] tracking-[0.28em] uppercase text-navy-deep hover:text-gold transition-colors inline-flex items-center gap-2">
+            <Link to="/services" className="text-[11px] tracking-[0.28em] uppercase text-ivory/85 hover:text-gold transition-colors inline-flex items-center gap-2">
               Δες όλες τις υπηρεσίες <ArrowRight size={14} />
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-5 md:gap-6">
             {services.map((s) => (
               <Link
                 key={s.slug}
                 to="/services/$slug"
                 params={{ slug: s.slug }}
-                className="luxury-card-light p-10 group flex flex-col"
+                className="luxury-card p-9 lg:p-10 group flex flex-col"
+                style={{ background: "rgba(7,21,51,0.78)" }}
               >
                 <div className="h-12 w-12 mb-8 grid place-items-center border border-gold text-gold">
-                  <Sparkles size={18} strokeWidth={1.2} />
+                  <Sparkles size={18} strokeWidth={1.3} />
                 </div>
-                <h3 className="font-serif text-2xl mb-3">{s.title}</h3>
-                <p className="text-sm text-ink/65 leading-relaxed flex-1">{s.desc}</p>
+                <h3 className="font-serif text-2xl mb-3 text-ivory">{s.title}</h3>
+                <p className="text-[14px] text-ivory/70 leading-relaxed flex-1">{s.desc}</p>
                 <span className="mt-8 inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-gold group-hover:gap-3 transition-all">
                   Μάθε περισσότερα <ArrowRight size={14} />
                 </span>
