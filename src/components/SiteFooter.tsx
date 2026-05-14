@@ -38,8 +38,19 @@ export function SiteFooter() {
           <ul className="space-y-4 text-[14px] text-ivory/70 font-light">
             <li className="flex items-center gap-3"><Phone size={13} strokeWidth={1.4} className="text-gold" /><span>+30 690 000 0000</span></li>
             <li className="flex items-center gap-3"><Mail size={13} strokeWidth={1.4} className="text-gold" /><span>info@angelikisavvidaki.gr</span></li>
-            <li className="flex items-center gap-3"><MapPin size={13} strokeWidth={1.4} className="text-gold" /><span>Αθήνα, Ελλάδα</span></li>
+            <li className="flex items-start gap-3"><MapPin size={13} strokeWidth={1.4} className="text-gold mt-1" /><span>Δήλου 2, 11146<br/>Γαλάτσι, Αθήνα</span></li>
           </ul>
+          <div className="mt-6 border border-gold/25 overflow-hidden">
+            <iframe
+              title="Χάρτης — Δήλου 2, Γαλάτσι"
+              src="https://www.google.com/maps?q=%CE%94%CE%AE%CE%BB%CE%BF%CF%85%202,%2011146%20%CE%93%CE%B1%CE%BB%CE%AC%CF%84%CF%83%CE%B9&output=embed"
+              width="100%"
+              height="180"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{ border: 0, filter: "grayscale(0.4) contrast(1.05)" }}
+            />
+          </div>
           <div className="mt-8 flex gap-3">
             <a href="#" aria-label="Instagram" className="h-11 w-11 grid place-items-center border border-gold/35 text-gold hover:bg-gold hover:text-navy-deep hover:border-gold transition-all">
               <Instagram size={15} strokeWidth={1.4} />

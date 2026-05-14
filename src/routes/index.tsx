@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Life & NLP Coach Αθήνα — Γαλάτσι, Ν. Ιωνία, Φιλοθέη | Αγγελική Σαββιδάκη" },
-      { name: "description", content: "Πιστοποιημένη Life & NLP Coach που εξυπηρετεί Γαλάτσι, Νέα Ιωνία, Νέο Ηράκλειο, Νέα Φιλαδέλφεια, Κυψέλη, Φιλοθέη, Ψυχικό. Premium 1:1 coaching για καθαρότητα και αυτοπεποίθηση." },
+      { name: "description", content: "Πιστοποιημένη Life & NLP Coach που εξυπηρετεί Γαλάτσι, Άνω Πατήσια, Νέα Ιωνία, Νέο Ηράκλειο, Νέα Φιλαδέλφεια, Κυψέλη, Φιλοθέη, Ψυχικό. Δήλου 2, 11146 Γαλάτσι. Premium 1:1 coaching." },
       { property: "og:title", content: "Life & NLP Coach Αθήνα | Αγγελική Σαββιδάκη" },
       { property: "og:description", content: "Premium 1:1 coaching σε Γαλάτσι, Νέα Ιωνία, Φιλοθέη, Ψυχικό και άλλες περιοχές της Αττικής." },
       { property: "og:url", content: "https://agelinasavidaki.lovable.app/" },
