@@ -140,7 +140,7 @@ function ServiceDetail() {
             <div className="mt-16">
               <h3 className="font-serif text-2xl mb-8">{service.howTitle}</h3>
               <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-4">
-                {service.how.map((h) => (
+                {service.how.map((h: string) => (
                   <li key={h} className="flex items-start gap-3 border-b border-taupe/30 pb-4">
                     <Check size={16} className="text-gold mt-1 shrink-0" strokeWidth={1.5} />
                     <span className="text-[15px] text-ink/80">{h}</span>
@@ -157,7 +157,7 @@ function ServiceDetail() {
           <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Τα οφέλη</p>
           <h2 className="font-serif text-3xl lg:text-4xl mb-12">Τι θα κερδίσεις από τη συνεργασία μας.</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {service.benefits.map((b) => (
+            {service.benefits.map((b: string) => (
               <div key={b} className="bg-white border border-gold/30 p-6 text-center">
                 <p className="font-serif text-lg text-navy-deep">{b}</p>
               </div>
