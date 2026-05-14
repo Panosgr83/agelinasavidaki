@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @theme inline {
   --font-serif: "Cormorant Garamond", Georgia, serif;
@@ -48,15 +48,16 @@
 :root {
   --radius: 0.25rem;
 
-  /* Brand palette — matched to template */
-  --navy-deep: #0A1A3D;
-  --navy: #0F2350;
-  --gold: #C9A86A;
+  /* Brand palette — exact hex per spec */
+  --navy-deep: #071533;
+  --navy: #0B1D46;
+  --navy-darker: #040A19;
+  --gold: #C8A96B;
   --gold-soft: #DCC089;
-  --ivory: #EDE3D2;
-  --champagne: #E5D8C2;
+  --ivory: #F3EEE6;
+  --champagne: #ECE2CF;
   --taupe: #B8AA98;
-  --ink: #1A1A2E;
+  --ink: #2A2430;
 
   /* Semantic — light/ivory base */
   --background: var(--ivory);
@@ -105,7 +106,13 @@
 
 @layer utilities {
   .bg-navy-gradient {
-    background: linear-gradient(135deg, #0A1A3D 0%, #0F2350 55%, #0A1A3D 100%);
+    background: linear-gradient(135deg, #071533 0%, #0B1D46 55%, #071533 100%);
+  }
+  .bg-hero-overlay {
+    background: linear-gradient(90deg, rgba(4,10,25,0.94) 0%, rgba(4,10,25,0.82) 38%, rgba(4,10,25,0.30) 60%, rgba(4,10,25,0.05) 100%);
+  }
+  .bg-hero-overlay-mobile {
+    background: linear-gradient(180deg, rgba(4,10,25,0.05) 0%, rgba(4,10,25,0.15) 38%, rgba(4,10,25,0.78) 70%, rgba(4,10,25,0.96) 100%);
   }
   .bg-gold-gradient {
     background: linear-gradient(135deg, #C8A96B 0%, #E0C58F 50%, #B8924F 100%);
@@ -133,44 +140,46 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.95rem 2rem;
+    padding: 18px 34px;
     font-family: var(--font-sans);
     font-size: 0.72rem;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 500;
-    color: var(--navy-deep);
-    background: var(--gold);
-    border: 1px solid var(--gold);
-    transition: all 320ms cubic-bezier(.2,.7,.2,1);
+    font-weight: 600;
+    color: #071533;
+    background: #C8A96B;
+    border: 1px solid #C8A96B;
+    border-radius: 0;
+    transition: all 380ms cubic-bezier(.2,.7,.2,1);
     cursor: pointer;
   }
   .btn-gold:hover {
-    background: var(--gold-soft);
-    border-color: var(--gold-soft);
-    transform: translateY(-1px);
-    box-shadow: 0 12px 30px -12px rgba(200,169,107,0.5);
+    background: #DCC089;
+    border-color: #DCC089;
+    box-shadow: 0 0 0 1px rgba(200,169,107,0.35), 0 18px 40px -18px rgba(200,169,107,0.55);
   }
   .btn-outline-gold {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.95rem 2rem;
+    padding: 18px 34px;
     font-family: var(--font-sans);
     font-size: 0.72rem;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--gold);
     background: transparent;
     border: 1px solid var(--gold);
-    transition: all 320ms cubic-bezier(.2,.7,.2,1);
+    border-radius: 0;
+    transition: all 380ms cubic-bezier(.2,.7,.2,1);
     cursor: pointer;
   }
   .btn-outline-gold:hover {
-    background: var(--gold);
-    color: var(--navy-deep);
+    background: rgba(200,169,107,0.08);
+    color: var(--gold-soft);
+    border-color: var(--gold-soft);
   }
   .btn-outline-navy {
     display: inline-flex;
