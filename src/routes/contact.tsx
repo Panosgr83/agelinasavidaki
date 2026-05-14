@@ -5,10 +5,33 @@ import { Phone, Mail, MessageCircle, ChevronDown } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Επικοινωνία — Αγγελική Σαββιδάκη" },
-      { name: "description", content: "Κάνε το πρώτο βήμα προς την αλλαγή. Κλείσε μια πρώτη συνάντηση γνωριμίας." },
+      { title: "Επικοινωνία — Αγγελική Σαββιδάκη | Δήλου 2, Γαλάτσι" },
+      { name: "description", content: "Κάνε το πρώτο βήμα προς την αλλαγή. Δήλου 2, 11146 Γαλάτσι — δια ζώσης ή online συνεδρίες coaching & NLP." },
       { property: "og:title", content: "Επικοινωνία — Αγγελική Σαββιδάκη" },
-      { property: "og:description", content: "Κάνε το πρώτο βήμα προς την αλλαγή." },
+      { property: "og:description", content: "Δήλου 2, 11146 Γαλάτσι. Κάνε το πρώτο βήμα προς την αλλαγή." },
+      { property: "og:url", content: "https://agelinasavidaki.lovable.app/contact" },
+    ],
+    links: [{ rel: "canonical", href: "https://agelinasavidaki.lovable.app/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Αγγελική Σαββιδάκη — Life & NLP Coach",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Δήλου 2",
+            postalCode: "11146",
+            addressLocality: "Γαλάτσι",
+            addressRegion: "Αττική",
+            addressCountry: "GR",
+          },
+          geo: { "@type": "GeoCoordinates", latitude: 38.0211, longitude: 23.7506 },
+          telephone: "+30 690 000 0000",
+          url: "https://agelinasavidaki.lovable.app/contact",
+        }),
+      },
     ],
   }),
   component: ContactPage,
