@@ -34,39 +34,44 @@ function HomePage() {
   return (
     <>
       {/* HERO — cinematic editorial */}
-      <section className="relative w-full bg-[#040A19] text-ivory overflow-hidden">
-        <div className="relative w-full min-h-[92vh] flex items-stretch pt-20 lg:pt-24">
+      <section className="relative w-full bg-[#020612] text-ivory overflow-hidden">
+        <div className="relative w-full min-h-[94vh] lg:min-h-[96vh] flex items-stretch pt-20 lg:pt-24">
           <img
             src={heroPortrait}
             alt="Αγγελική Σαββιδάκη"
-            className="absolute inset-0 h-full w-full object-cover object-[60%_15%] lg:object-[right_center]"
+            className="absolute inset-0 h-full w-full object-cover object-[62%_18%] lg:object-[right_center]"
+            style={{ filter: "contrast(1.08) saturate(1.05) brightness(1.04)" }}
           />
+          {/* Layered overlays for cinematic depth */}
           <div className="absolute inset-0 hidden md:block bg-hero-overlay" />
           <div className="absolute inset-0 md:hidden bg-hero-overlay-mobile" />
-          <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
-            style={{ backgroundImage: "radial-gradient(circle at 12% 55%, #C8A96B 0%, transparent 60%)" }} />
+          <div className="absolute inset-0 hero-vignette pointer-events-none" />
+          <div className="absolute inset-0 opacity-[0.10] pointer-events-none mix-blend-screen"
+            style={{ backgroundImage: "radial-gradient(circle at 8% 60%, #C8A96B 0%, transparent 55%)" }} />
 
           <div className="relative w-full mx-auto max-w-7xl px-5 md:px-10 lg:px-14 flex items-end md:items-center">
-            <div className="fade-up w-full md:max-w-[640px] lg:max-w-[720px] py-16 md:py-20">
-              <p className="eyebrow mb-6 md:mb-7">Life & NLP Coach</p>
+            <div className="fade-up w-full md:max-w-[680px] lg:max-w-[780px] py-14 md:py-24">
+              <p className="eyebrow mb-7 md:mb-8">Life & NLP Coach</p>
               <h1
                 className="font-serif text-ivory"
                 style={{
-                  fontSize: "clamp(42px, 7.4vw, 82px)",
-                  lineHeight: 1.04,
-                  letterSpacing: "-0.03em",
+                  fontSize: "clamp(46px, 8.2vw, 96px)",
+                  lineHeight: 0.98,
+                  letterSpacing: "-0.035em",
                   fontWeight: 500,
+                  textShadow: "0 2px 30px rgba(0,0,0,0.4)",
                 }}
               >
-                Ξαναχτίσε τη ζωή σου<br/>
-                με καθαρότητα,<br/>
+                Ξαναχτίσε<br/>
+                τη ζωή σου με<br/>
+                <em className="not-italic" style={{ color: "#C8A96B" }}>καθαρότητα,</em><br/>
                 <em className="not-italic" style={{ color: "#C8A96B" }}>αυτοπεποίθηση</em><br/>
-                και <em className="not-italic" style={{ color: "#C8A96B" }}>κατεύθυνση</em>.
+                <span className="text-ivory">&amp;</span> <em className="not-italic" style={{ color: "#C8A96B" }}>κατεύθυνση.</em>
               </h1>
-              <p className="mt-7 md:mt-8 max-w-xl text-[15px] md:text-base text-ivory/80 leading-[1.75]">
+              <p className="mt-8 md:mt-10 max-w-xl text-[15px] md:text-[17px] text-ivory/85 leading-[1.8] font-light">
                 Σε βοηθώ να ξεπεράσεις τα εμπόδια, να ανακαλύψεις τον πραγματικό σου εαυτό και να δημιουργήσεις τη ζωή που αξίζεις.
               </p>
-              <div className="mt-9 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-4">
+              <div className="mt-10 md:mt-12 flex flex-col sm:flex-row flex-wrap gap-4">
                 <Link to="/contact" className="btn-gold">Κλείσε μια πρώτη συνάντηση</Link>
                 <Link to="/about" className="btn-outline-gold">Μάθε περισσότερα</Link>
               </div>
