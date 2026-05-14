@@ -78,36 +78,36 @@ function HomePage() {
       </section>
 
       {/* PHILOSOPHY */}
-      <section className="bg-ivory text-ink py-28 lg:py-36">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12 grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          <div>
-            <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Η Προσέγγιση Μου</p>
-            <h2 className="font-serif text-4xl lg:text-5xl leading-tight">
-              Ολιστική καθοδήγηση.<br/>
-              <em className="not-italic text-gold">Αληθινή μεταμόρφωση.</em>
-            </h2>
-            <div className="hairline mt-8 max-w-[120px] !bg-gold opacity-100" style={{height: 1, background: "var(--gold)"}} />
-            <p className="mt-8 max-w-md text-[15px] leading-relaxed text-ink/75">
-              Συνδυάζω τεχνικές NLP, coaching και ψυχολογίας για να σε βοηθήσω
-              να αλλάξεις το πώς σκέφτεσαι, νιώθεις και λειτουργείς — ώστε να δημιουργήσεις διαφορετικά αποτελέσματα στη ζωή σου.
-            </p>
-          </div>
+      <section className="bg-ivory text-ink py-32 lg:py-40">
+        <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
+          <div className="grid lg:grid-cols-[1.1fr_1.6fr] gap-14 lg:gap-20 items-start">
+            <div>
+              <p className="eyebrow mb-6 !text-[color:var(--navy-deep)]/60">Η Προσέγγιση Μου</p>
+              <h2 className="font-serif text-4xl lg:text-5xl xl:text-[3.4rem] leading-[1.05] tracking-tight">
+                Ολιστική καθοδήγηση,<br/>
+                <em className="not-italic text-gold">Αληθινή μεταμόρφωση.</em>
+              </h2>
+              <p className="mt-8 max-w-md text-[15px] leading-[1.8] text-ink/75">
+                Συνδυάζω τεχνικές NLP, coaching και ψυχολογίας για να σε βοηθήσω να αλλάξεις το πώς σκέφτεσαι, νιώθεις και λειτουργείς — ώστε να δημιουργήσεις διαφορετικά αποτελέσματα στη ζωή σου.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-2 gap-8 lg:gap-12">
-            {[
-              { icon: Brain, title: "Νους", desc: "Αλλάζουμε περιοριστικές πεποιθήσεις και νοητικά μοτίβα." },
-              { icon: Heart, title: "Συναίσθημα", desc: "Ενισχύουμε τη συναισθηματική σου νοημοσύνη." },
-              { icon: Sparkles, title: "Δράση", desc: "Θέτουμε ξεκάθαρους στόχους και πλάνο δράσης." },
-              { icon: Compass, title: "Ισορροπία", desc: "Χτίζουμε μια ζωή με νόημα και εσωτερική γαλήνη." },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="space-y-3">
-                <div className="h-12 w-12 grid place-items-center border border-gold/50 text-gold">
-                  <Icon size={20} strokeWidth={1.2} />
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-x-8 lg:pt-16">
+              {[
+                { icon: Brain, title: "Νους", desc: "Αλλάζουμε περιοριστικές πεποιθήσεις και νοητικά μοτίβα." },
+                { icon: Heart, title: "Συναίσθημα", desc: "Ενισχύουμε τη συναισθηματική σου νοημοσύνη." },
+                { icon: Compass, title: "Δράση", desc: "Θέτουμε ξεκάθαρους στόχους και πλάνο δράσης." },
+                { icon: Sparkles, title: "Ισορροπία", desc: "Χτίζουμε μια ζωή με νόημα και εσωτερική γαλήνη." },
+              ].map(({ icon: Icon, title, desc }) => (
+                <div key={title} className="space-y-4">
+                  <div className="h-12 w-12 grid place-items-center border border-gold/60 text-gold">
+                    <Icon size={20} strokeWidth={1.3} />
+                  </div>
+                  <h3 className="font-serif text-[1.35rem]">{title}</h3>
+                  <p className="text-[13.5px] text-ink/60 leading-[1.7]">{desc}</p>
                 </div>
-                <h3 className="font-serif text-xl">{title}</h3>
-                <p className="text-sm text-ink/65 leading-relaxed">{desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
