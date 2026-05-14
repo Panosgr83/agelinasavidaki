@@ -167,22 +167,22 @@ function HomePage() {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-7">
             {services.map((s) => (
               <Link
                 key={s.slug}
                 to="/services/$slug"
                 params={{ slug: s.slug }}
-                className="luxury-card p-9 lg:p-10 group flex flex-col"
-                style={{ background: "rgba(7,21,51,0.78)" }}
+                className="luxury-card p-10 lg:p-12 group flex flex-col"
+                style={{ background: "rgba(4,10,25,0.55)" }}
               >
-                <div className="h-12 w-12 mb-8 grid place-items-center border border-gold text-gold">
-                  <Sparkles size={18} strokeWidth={1.3} />
+                <div className="h-14 w-14 mb-10 grid place-items-center border border-gold/70 text-gold group-hover:border-gold transition-colors">
+                  <Sparkles size={20} strokeWidth={1.2} />
                 </div>
-                <h3 className="font-serif text-2xl mb-3 text-ivory">{s.title}</h3>
-                <p className="text-[14px] text-ivory/70 leading-relaxed flex-1">{s.desc}</p>
-                <span className="mt-8 inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-gold group-hover:gap-3 transition-all">
-                  Μάθε περισσότερα <ArrowRight size={14} />
+                <h3 className="font-serif text-[1.65rem] lg:text-[1.85rem] mb-4 text-ivory leading-[1.15] tracking-tight">{s.title}</h3>
+                <p className="text-[14px] text-ivory/65 leading-[1.85] flex-1 font-light">{s.desc}</p>
+                <span className="mt-10 inline-flex items-center gap-2 text-[10.5px] tracking-[0.32em] uppercase text-gold group-hover:gap-4 transition-all">
+                  Μάθε περισσότερα <ArrowRight size={13} strokeWidth={1.5} />
                 </span>
               </Link>
             ))}
