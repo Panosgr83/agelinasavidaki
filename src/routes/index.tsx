@@ -186,7 +186,7 @@ function HomePage() {
       </section>
 
       {/* ABOUT TEASER */}
-      <section className="bg-champagne text-ink py-24 lg:py-32">
+      <section className="bg-ivory text-ink py-28 lg:py-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
           <div className="relative aspect-[4/5] overflow-hidden">
             <div className="absolute -inset-3 border border-gold/40 -translate-x-4 -translate-y-4 hidden lg:block" />
