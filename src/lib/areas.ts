@@ -79,6 +79,17 @@ export const areas: Area[] = [
   },
 ];
 
+areas.push({
+  slug: "ano-patisia",
+  name: "Άνω Πατήσια",
+  nameGenitive: "Άνω Πατησίων",
+  intro: "Life & NLP Coaching για τα Άνω Πατήσια — δια ζώσης σε κοντινό χώρο στο Γαλάτσι ή online.",
+  body: [
+    "Στα Άνω Πατήσια, η ανάγκη για έναν έμπιστο life coach που να σε βοηθήσει να ξεκαθαρίσεις σκέψεις, στόχους και κατεύθυνση είναι μεγάλη. Η Αγγελική Σαββιδάκη προσφέρει εξατομικευμένες 1:1 συνεδρίες coaching και NLP, εύκολα προσβάσιμες από την περιοχή σου.",
+    "Δουλεύουμε σε mindset, σχέσεις, καριέρα και εσωτερική ισορροπία — με στρατηγική, πρακτικά εργαλεία και βαθιά ενσυναίσθηση.",
+  ],
+});
+
 export const areaSlugs = areas.map((a) => a.slug);
 export function getArea(slug: string) {
   return areas.find((a) => a.slug === slug);
