@@ -13,6 +13,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PerioxesIndexRouteImport } from './routes/perioxes.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as PerioxesSlugRouteImport } from './routes/perioxes.$slug'
 
@@ -36,6 +37,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PerioxesIndexRoute = PerioxesIndexRouteImport.update({
+  id: '/perioxes/',
+  path: '/perioxes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRouteWithChildren
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/perioxes/': typeof PerioxesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRouteWithChildren
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/perioxes': typeof PerioxesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/services': typeof ServicesRouteWithChildren
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
+  '/perioxes/': typeof PerioxesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +90,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/perioxes/$slug'
     | '/services/$slug'
+    | '/perioxes/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +99,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/perioxes/$slug'
     | '/services/$slug'
+    | '/perioxes'
   id:
     | '__root__'
     | '/'
@@ -97,6 +108,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/perioxes/$slug'
     | '/services/$slug'
+    | '/perioxes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   PerioxesSlugRoute: typeof PerioxesSlugRoute
+  PerioxesIndexRoute: typeof PerioxesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perioxes/': {
+      id: '/perioxes/'
+      path: '/perioxes'
+      fullPath: '/perioxes/'
+      preLoaderRoute: typeof PerioxesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/$slug': {
@@ -172,6 +192,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRouteWithChildren,
   PerioxesSlugRoute: PerioxesSlugRoute,
+  PerioxesIndexRoute: PerioxesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
