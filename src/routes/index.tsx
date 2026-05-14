@@ -116,10 +116,7 @@ function HomePage() {
       <section className="bg-navy-gradient text-ivory py-32 lg:py-40 relative overflow-hidden">
         <div className="absolute -right-32 top-1/4 w-[28rem] h-[28rem] rounded-full opacity-[0.05] pointer-events-none"
           style={{ background: "radial-gradient(circle, #C8A96B, transparent 70%)" }} />
-        <div className="hidden" />
-        <div className="absolute -right-32 top-1/4 w-96 h-96 rounded-full opacity-[0.04]"
-          style={{ background: "radial-gradient(circle, #C8A96B, transparent 70%)" }} />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-12 grid lg:grid-cols-[1fr_1.4fr] gap-16 items-start">
+        <div className="relative mx-auto max-w-7xl px-5 md:px-8 lg:px-12 grid lg:grid-cols-[1fr_1.4fr] gap-14 lg:gap-20 items-start">
           <div>
             <p className="eyebrow mb-6">Από τη στασιμότητα στην εξέλιξη</p>
             <h2 className="font-serif text-4xl lg:text-5xl leading-tight">
