@@ -112,7 +112,7 @@
     background: linear-gradient(90deg, rgba(4,10,25,0.94) 0%, rgba(4,10,25,0.82) 38%, rgba(4,10,25,0.30) 60%, rgba(4,10,25,0.05) 100%);
   }
   .bg-hero-overlay-mobile {
-    background: linear-gradient(180deg, rgba(4,10,25,0.35) 0%, rgba(4,10,25,0.55) 45%, rgba(4,10,25,0.92) 78%, rgba(4,10,25,0.96) 100%);
+    background: linear-gradient(180deg, rgba(4,10,25,0.05) 0%, rgba(4,10,25,0.15) 38%, rgba(4,10,25,0.78) 70%, rgba(4,10,25,0.96) 100%);
   }
   .bg-gold-gradient {
     background: linear-gradient(135deg, #C8A96B 0%, #E0C58F 50%, #B8924F 100%);
