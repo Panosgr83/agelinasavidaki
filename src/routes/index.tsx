@@ -39,7 +39,7 @@ function HomePage() {
           <img
             src={heroPortrait}
             alt="Αγγελική Σαββιδάκη"
-            className="absolute inset-0 h-full w-full object-cover object-[70%_center] lg:object-[right_center]"
+            className="absolute inset-0 h-full w-full object-cover object-[60%_15%] lg:object-[right_center]"
           />
           <div className="absolute inset-0 hidden md:block bg-hero-overlay" />
           <div className="absolute inset-0 md:hidden bg-hero-overlay-mobile" />
