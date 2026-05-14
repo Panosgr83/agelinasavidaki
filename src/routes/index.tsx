@@ -177,7 +177,7 @@ function HomePage() {
                 to="/services/$slug"
                 params={{ slug: s.slug }}
                 className="luxury-card p-10 lg:p-12 group flex flex-col"
-                style={{ background: "rgba(4,10,25,0.55)" }}
+                style={{ background: "rgba(6,11,28,0.6)" }}
               >
                 <div className="h-14 w-14 mb-10 grid place-items-center border border-gold/70 text-gold group-hover:border-gold transition-colors">
                   <Sparkles size={20} strokeWidth={1.2} />
