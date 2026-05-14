@@ -1,9 +1,10 @@
 import { Fragment } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Brain, Heart, Compass, Sparkles, ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowRight, Brain, Heart, Compass, Sparkles, ArrowUpRight, MapPin, BookOpen } from "lucide-react";
 import heroPortrait from "@/assets/hero-portrait.png";
 import aboutPortrait from "@/assets/about-portrait.png";
 import { areas } from "@/lib/areas";
+import { articles } from "@/lib/articles";
 
 export const Route = createFileRoute("/")({
   head: () => ({
