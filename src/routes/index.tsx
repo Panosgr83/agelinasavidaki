@@ -214,6 +214,35 @@ function HomePage() {
         </div>
       </section>
 
+      {/* AREAS SERVED — local SEO */}
+      <section className="bg-ivory text-ink py-24 lg:py-32 border-t border-taupe/20">
+        <div className="mx-auto max-w-6xl px-6 lg:px-12">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+            <div>
+              <p className="eyebrow mb-5 inline-flex items-center gap-2 !text-[color:var(--navy-deep)]/60"><MapPin size={12} /> Περιοχές εξυπηρέτησης</p>
+              <h2 className="font-serif text-3xl lg:text-5xl leading-[1.05] tracking-tight max-w-2xl">
+                Life Coaching σε <em className="not-italic text-gold">Αθήνα & Βόρεια Προάστια.</em>
+              </h2>
+            </div>
+            <Link to="/perioxes" className="text-[11px] tracking-[0.28em] uppercase text-ink/70 hover:text-gold transition-colors inline-flex items-center gap-2">
+              Όλες οι περιοχές <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+            {areas.map((a) => (
+              <Link
+                key={a.slug}
+                to="/perioxes/$slug"
+                params={{ slug: a.slug }}
+                className="border border-taupe/40 px-4 py-4 text-[13px] text-ink/80 hover:border-gold hover:text-navy-deep hover:bg-champagne/40 transition-all text-center"
+              >
+                {a.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA STRIP */}
       <section className="bg-navy-deep text-ivory py-20">
         <div className="mx-auto max-w-5xl px-6 text-center">
