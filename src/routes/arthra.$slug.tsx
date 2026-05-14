@@ -87,7 +87,7 @@ function ArticlePage() {
         </div>
         <div className="mx-auto max-w-3xl px-6 lg:px-12 pb-24">
           <div className="space-y-7 text-[16px] lg:text-[17px] leading-[1.85] text-ink/85">
-            {article.body.map((p, i) => (
+            {article.body.map((p: string, i: number) => (
               <p key={i}>{p}</p>
             ))}
           </div>
