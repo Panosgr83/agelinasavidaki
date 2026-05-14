@@ -25,8 +25,8 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[rgba(4,10,25,0.88)] backdrop-blur-[14px] border-b border-gold/15"
-          : "bg-[rgba(4,10,25,0.45)] backdrop-blur-[6px]"
+          ? "bg-[rgba(6,11,28,0.92)] backdrop-blur-[14px] border-b border-gold/15"
+          : "bg-[rgba(6,11,28,0.5)] backdrop-blur-[6px]"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8 lg:px-12 py-5 lg:py-6">
