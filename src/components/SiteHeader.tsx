@@ -29,12 +29,13 @@ export function SiteHeader() {
           : "bg-[rgba(6,11,28,0.5)] backdrop-blur-[6px]"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8 lg:px-12 py-5 lg:py-6">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Αγγελική Σαββιδάκη" className="h-14 lg:h-16 w-auto" />
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8 lg:px-12 py-3 lg:py-4">
+        <Link to="/" className="flex items-center gap-3 md:gap-4">
+          <img src={logo} alt="Αγγελική Σαββιδάκη" className="h-16 sm:h-20 lg:h-24 w-auto" />
           <span className="hidden sm:flex flex-col leading-tight">
-            <span className="font-serif text-ivory text-[17px] tracking-wide">Αγγελική Σαββιδάκη</span>
+            <span className="font-serif text-ivory text-[17px] lg:text-[18px] tracking-wide">Αγγελική Σαββιδάκη</span>
             <span className="text-[10px] tracking-[0.34em] text-gold uppercase mt-0.5">Life & NLP Coach</span>
+            <span className="text-[10px] lg:text-[11px] text-ivory/65 italic font-serif mt-1 tracking-wide">Σύμβουλος Προσωπικής & Επαγγελματικής Ανάπτυξης</span>
           </span>
         </Link>
 

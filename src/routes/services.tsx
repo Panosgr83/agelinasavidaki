@@ -14,12 +14,14 @@ export const Route = createFileRoute("/services")({
 });
 
 const services = [
-  { slug: "life-coaching", title: "Life Coaching", subtitle: "Συμβουλευτική Προσωπικής Ανάπτυξης", desc: "Βελτίωσε την καθημερινότητά σου, διαχειρίσου το άγχος και ζήσε πιο συνειδητά." },
+  { slug: "life-coaching", title: "Life Coach", subtitle: "Συμβουλευτική Προσωπικής Ανάπτυξης", desc: "Βελτίωσε την καθημερινότητά σου, διαχειρίσου το άγχος και ζήσε πιο συνειδητά." },
+  { slug: "mindfulness", title: "Mindfulness", subtitle: "Ενσυνειδητότητα & παρουσία", desc: "Πρακτικές για να ζεις στο τώρα με επίγνωση, ηρεμία και καθαρό μυαλό." },
+  { slug: "stress-management", title: "Διαχείριση Άγχους", subtitle: "Εργαλεία ηρεμίας & ισορροπίας", desc: "Πρακτικά εργαλεία για να μην σε κυβερνά πια το άγχος της καθημερινότητας." },
+  { slug: "parent-coaching", title: "Συμβουλευτική Γονέων", subtitle: "Parent Coaching", desc: "Γίνε ο γονιός που θέλεις να είσαι, με υγιή όρια και βαθιά σύνδεση." },
+  { slug: "relationship-coaching", title: "Συμβουλευτική Σχέσεων", subtitle: "Relationship Coaching", desc: "Χτίσε υγιείς, ουσιαστικές σχέσεις βασισμένες στην εμπιστοσύνη." },
+  { slug: "career-orientation", title: "Σύμβουλος Ε.Π.", subtitle: "Επαγγελματικός Προσανατολισμός εφήβων & ενηλίκων", desc: "Βρες την πορεία σπουδών ή καριέρας που ταιριάζει στις αξίες σου." },
+  { slug: "hr-consulting", title: "Σύμβουλος Ανθρώπινου Δυναμικού", subtitle: "HR Consulting", desc: "Coaching σε στελέχη και ομάδες, πρόληψη burnout και θετική κουλτούρα." },
   { slug: "nlp", title: "NLP", subtitle: "Νευρογλωσσικός Προγραμματισμός", desc: "Άλλαξε περιοριστικές πεποιθήσεις και ενίσχυσε την αυτοπεποίθησή σου." },
-  { slug: "relationship-coaching", title: "Relationship Coaching", subtitle: "Σύμβουλος Σχέσεων", desc: "Χτίσε υγιείς, ουσιαστικές σχέσεις βασισμένες στην εμπιστοσύνη." },
-  { slug: "parent-coaching", title: "Parent Coaching", subtitle: "Συμβουλευτική Γονέων", desc: "Γίνε ο γονιός που θέλεις να είσαι, με υγιή όρια και βαθιά σύνδεση." },
-  { slug: "executive-coaching", title: "Executive Coaching", subtitle: "Συμβουλευτική Επιχειρήσεων", desc: "Ηγεσία με ισορροπία, στρατηγική σκέψη και επαγγελματική εξέλιξη." },
-  { slug: "career-orientation", title: "Επαγγελματικός Προσανατολισμός", subtitle: "Σύμβουλος Καριέρας", desc: "Βρες την πορεία που ταιριάζει στις αξίες και τα όνειρά σου." },
 ];
 
 function ServicesPage() {
