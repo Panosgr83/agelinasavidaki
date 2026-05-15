@@ -3,6 +3,7 @@ import {
   Outlet,
   createRootRouteWithContext,
   useRouter,
+  useLocation,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -10,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -116,13 +118,16 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const location = useLocation();
+  const isCosmote = location.pathname.startsWith("/cosmote");
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteHeader />
+      {!isCosmote && <SiteHeader />}
       <main className="min-h-screen">
         <Outlet />
       </main>
-      <SiteFooter />
+      {!isCosmote && <SiteFooter />}
+      <Toaster />
     </QueryClientProvider>
   );
 }

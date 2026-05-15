@@ -1,0 +1,22 @@
+[
+  {
+    "name": "FAMILY PACK",
+    "price": 11.73
+  },
+  {
+    "name": "CINEMA PACK",
+    "price": 15.36
+  },
+  {
+    "name": "SPORTS PACK",
+    "price": 27.18
+  },
+  {
+    "name": "FULL PACK",
+    "price": 29.91
+  },
+  {
+    "name": "ENTRY PACK",
+    "price": 8.15
+  }
+]
