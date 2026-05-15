@@ -10,19 +10,31 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as GdprRouteImport } from './routes/gdpr'
+import { Route as CosmoteRouteImport } from './routes/cosmote'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as PerioxesIndexRouteImport } from './routes/perioxes.index'
+import { Route as CosmoteIndexRouteImport } from './routes/cosmote.index'
 import { Route as ArthraIndexRouteImport } from './routes/arthra.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as PerioxesSlugRouteImport } from './routes/perioxes.$slug'
+import { Route as CosmoteLoginRouteImport } from './routes/cosmote.login'
+import { Route as CosmoteCustomersRouteImport } from './routes/cosmote.customers'
+import { Route as CosmoteCalculatorRouteImport } from './routes/cosmote.calculator'
 import { Route as ArthraSlugRouteImport } from './routes/arthra.$slug'
+import { Route as CosmoteOffersIndexRouteImport } from './routes/cosmote.offers.index'
+import { Route as CosmoteOffersIdRouteImport } from './routes/cosmote.offers.$id'
 
 const GdprRoute = GdprRouteImport.update({
   id: '/gdpr',
   path: '/gdpr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CosmoteRoute = CosmoteRouteImport.update({
+  id: '/cosmote',
+  path: '/cosmote',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -50,6 +62,11 @@ const PerioxesIndexRoute = PerioxesIndexRouteImport.update({
   path: '/perioxes/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CosmoteIndexRoute = CosmoteIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CosmoteRoute,
+} as any)
 const ArthraIndexRoute = ArthraIndexRouteImport.update({
   id: '/arthra/',
   path: '/arthra/',
@@ -65,23 +82,55 @@ const PerioxesSlugRoute = PerioxesSlugRouteImport.update({
   path: '/perioxes/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CosmoteLoginRoute = CosmoteLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => CosmoteRoute,
+} as any)
+const CosmoteCustomersRoute = CosmoteCustomersRouteImport.update({
+  id: '/customers',
+  path: '/customers',
+  getParentRoute: () => CosmoteRoute,
+} as any)
+const CosmoteCalculatorRoute = CosmoteCalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
+  getParentRoute: () => CosmoteRoute,
+} as any)
 const ArthraSlugRoute = ArthraSlugRouteImport.update({
   id: '/arthra/$slug',
   path: '/arthra/$slug',
   getParentRoute: () => rootRouteImport,
+} as any)
+const CosmoteOffersIndexRoute = CosmoteOffersIndexRouteImport.update({
+  id: '/offers/',
+  path: '/offers/',
+  getParentRoute: () => CosmoteRoute,
+} as any)
+const CosmoteOffersIdRoute = CosmoteOffersIdRouteImport.update({
+  id: '/offers/$id',
+  path: '/offers/$id',
+  getParentRoute: () => CosmoteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/cosmote': typeof CosmoteRouteWithChildren
   '/gdpr': typeof GdprRoute
   '/arthra/$slug': typeof ArthraSlugRoute
+  '/cosmote/calculator': typeof CosmoteCalculatorRoute
+  '/cosmote/customers': typeof CosmoteCustomersRoute
+  '/cosmote/login': typeof CosmoteLoginRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/arthra/': typeof ArthraIndexRoute
+  '/cosmote/': typeof CosmoteIndexRoute
   '/perioxes/': typeof PerioxesIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/cosmote/offers/$id': typeof CosmoteOffersIdRoute
+  '/cosmote/offers/': typeof CosmoteOffersIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -89,24 +138,37 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/gdpr': typeof GdprRoute
   '/arthra/$slug': typeof ArthraSlugRoute
+  '/cosmote/calculator': typeof CosmoteCalculatorRoute
+  '/cosmote/customers': typeof CosmoteCustomersRoute
+  '/cosmote/login': typeof CosmoteLoginRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/arthra': typeof ArthraIndexRoute
+  '/cosmote': typeof CosmoteIndexRoute
   '/perioxes': typeof PerioxesIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/cosmote/offers/$id': typeof CosmoteOffersIdRoute
+  '/cosmote/offers': typeof CosmoteOffersIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/cosmote': typeof CosmoteRouteWithChildren
   '/gdpr': typeof GdprRoute
   '/arthra/$slug': typeof ArthraSlugRoute
+  '/cosmote/calculator': typeof CosmoteCalculatorRoute
+  '/cosmote/customers': typeof CosmoteCustomersRoute
+  '/cosmote/login': typeof CosmoteLoginRoute
   '/perioxes/$slug': typeof PerioxesSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/arthra/': typeof ArthraIndexRoute
+  '/cosmote/': typeof CosmoteIndexRoute
   '/perioxes/': typeof PerioxesIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/cosmote/offers/$id': typeof CosmoteOffersIdRoute
+  '/cosmote/offers/': typeof CosmoteOffersIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -114,13 +176,20 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/cosmote'
     | '/gdpr'
     | '/arthra/$slug'
+    | '/cosmote/calculator'
+    | '/cosmote/customers'
+    | '/cosmote/login'
     | '/perioxes/$slug'
     | '/services/$slug'
     | '/arthra/'
+    | '/cosmote/'
     | '/perioxes/'
     | '/services/'
+    | '/cosmote/offers/$id'
+    | '/cosmote/offers/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -128,29 +197,43 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gdpr'
     | '/arthra/$slug'
+    | '/cosmote/calculator'
+    | '/cosmote/customers'
+    | '/cosmote/login'
     | '/perioxes/$slug'
     | '/services/$slug'
     | '/arthra'
+    | '/cosmote'
     | '/perioxes'
     | '/services'
+    | '/cosmote/offers/$id'
+    | '/cosmote/offers'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
+    | '/cosmote'
     | '/gdpr'
     | '/arthra/$slug'
+    | '/cosmote/calculator'
+    | '/cosmote/customers'
+    | '/cosmote/login'
     | '/perioxes/$slug'
     | '/services/$slug'
     | '/arthra/'
+    | '/cosmote/'
     | '/perioxes/'
     | '/services/'
+    | '/cosmote/offers/$id'
+    | '/cosmote/offers/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  CosmoteRoute: typeof CosmoteRouteWithChildren
   GdprRoute: typeof GdprRoute
   ArthraSlugRoute: typeof ArthraSlugRoute
   PerioxesSlugRoute: typeof PerioxesSlugRoute
@@ -167,6 +250,13 @@ declare module '@tanstack/react-router' {
       path: '/gdpr'
       fullPath: '/gdpr'
       preLoaderRoute: typeof GdprRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cosmote': {
+      id: '/cosmote'
+      path: '/cosmote'
+      fullPath: '/cosmote'
+      preLoaderRoute: typeof CosmoteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -204,6 +294,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PerioxesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cosmote/': {
+      id: '/cosmote/'
+      path: '/'
+      fullPath: '/cosmote/'
+      preLoaderRoute: typeof CosmoteIndexRouteImport
+      parentRoute: typeof CosmoteRoute
+    }
     '/arthra/': {
       id: '/arthra/'
       path: '/arthra'
@@ -225,6 +322,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PerioxesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cosmote/login': {
+      id: '/cosmote/login'
+      path: '/login'
+      fullPath: '/cosmote/login'
+      preLoaderRoute: typeof CosmoteLoginRouteImport
+      parentRoute: typeof CosmoteRoute
+    }
+    '/cosmote/customers': {
+      id: '/cosmote/customers'
+      path: '/customers'
+      fullPath: '/cosmote/customers'
+      preLoaderRoute: typeof CosmoteCustomersRouteImport
+      parentRoute: typeof CosmoteRoute
+    }
+    '/cosmote/calculator': {
+      id: '/cosmote/calculator'
+      path: '/calculator'
+      fullPath: '/cosmote/calculator'
+      preLoaderRoute: typeof CosmoteCalculatorRouteImport
+      parentRoute: typeof CosmoteRoute
+    }
     '/arthra/$slug': {
       id: '/arthra/$slug'
       path: '/arthra/$slug'
@@ -232,13 +350,49 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArthraSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cosmote/offers/': {
+      id: '/cosmote/offers/'
+      path: '/offers'
+      fullPath: '/cosmote/offers/'
+      preLoaderRoute: typeof CosmoteOffersIndexRouteImport
+      parentRoute: typeof CosmoteRoute
+    }
+    '/cosmote/offers/$id': {
+      id: '/cosmote/offers/$id'
+      path: '/offers/$id'
+      fullPath: '/cosmote/offers/$id'
+      preLoaderRoute: typeof CosmoteOffersIdRouteImport
+      parentRoute: typeof CosmoteRoute
+    }
   }
 }
+
+interface CosmoteRouteChildren {
+  CosmoteCalculatorRoute: typeof CosmoteCalculatorRoute
+  CosmoteCustomersRoute: typeof CosmoteCustomersRoute
+  CosmoteLoginRoute: typeof CosmoteLoginRoute
+  CosmoteIndexRoute: typeof CosmoteIndexRoute
+  CosmoteOffersIdRoute: typeof CosmoteOffersIdRoute
+  CosmoteOffersIndexRoute: typeof CosmoteOffersIndexRoute
+}
+
+const CosmoteRouteChildren: CosmoteRouteChildren = {
+  CosmoteCalculatorRoute: CosmoteCalculatorRoute,
+  CosmoteCustomersRoute: CosmoteCustomersRoute,
+  CosmoteLoginRoute: CosmoteLoginRoute,
+  CosmoteIndexRoute: CosmoteIndexRoute,
+  CosmoteOffersIdRoute: CosmoteOffersIdRoute,
+  CosmoteOffersIndexRoute: CosmoteOffersIndexRoute,
+}
+
+const CosmoteRouteWithChildren =
+  CosmoteRoute._addFileChildren(CosmoteRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  CosmoteRoute: CosmoteRouteWithChildren,
   GdprRoute: GdprRoute,
   ArthraSlugRoute: ArthraSlugRoute,
   PerioxesSlugRoute: PerioxesSlugRoute,
