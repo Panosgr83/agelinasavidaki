@@ -1,0 +1,258 @@
+[
+  {
+    "name": "COSMOTE DP24_500_24μήνες (Offer 1)",
+    "internet": "έως 24 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "500'",
+    "price": 25.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP24_500_24 μήνες (Offer 3)",
+    "internet": "έως 24 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "500'",
+    "price": 24.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP24_Unl_24 μήνες (Offer 1)",
+    "internet": "έως 24 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 27.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP24UNL_ 24μήνες (Offer 4)",
+    "internet": "έως 24 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 19.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP50_500_24 μήνες (Offer 1)",
+    "internet": "έως 50 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "500'",
+    "price": 30.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP50_500_24 μήνες (Offer 2)",
+    "internet": "έως 50 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "500'",
+    "price": 28.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP50_Unl_24 μήνες (Offer 1)",
+    "internet": "έως 50 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 32.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP50_UNL_24 μήνες (Offer 2)",
+    "internet": "έως 50 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 26.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP50_UNL_24 μήνες (Offer 5)",
+    "internet": "έως 50 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 24.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP50_UNL_24 μήνες (Offer 6)",
+    "internet": "έως 50 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 22.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP100_500_24 μήνες (Offer 1)",
+    "internet": "έως 100 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "500'",
+    "price": 35.9,
+    "price_ftth": 34.2
+  },
+  {
+    "name": "COSMOTE DP100_500_24 μήνες (Offer 2)",
+    "internet": "έως 100 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "500'",
+    "price": 33.9,
+    "price_ftth": 32.29
+  },
+  {
+    "name": "COSMOTE DP100_Unl_24 μήνες (Offer 1)",
+    "internet": "έως 100 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 37.9,
+    "price_ftth": 36.1
+  },
+  {
+    "name": "COSMOTE DP100_Unl_24 μήνες (Offer 3)",
+    "internet": "έως 100 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 28.9,
+    "price_ftth": 27.53
+  },
+  {
+    "name": "COSMOTE DP100_Unl_24 μήνες (Offer 5)",
+    "internet": "έως 100 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 31.9,
+    "price_ftth": 30.39
+  },
+  {
+    "name": "COSMOTE DP100_Unl_24 μήνες (Offer 4)",
+    "internet": "έως 100 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 26.9,
+    "price_ftth": 25.62
+  },
+  {
+    "name": "COSMOTE DP100_Unl_24 μήνες (Offer 7)",
+    "internet": "έως 100 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 24.9,
+    "price_ftth": 23.71
+  },
+  {
+    "name": "COSMOTE DP200_Unl_24 μήνες (Offer 2)",
+    "internet": "έως 200 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 45.9,
+    "price_ftth": 43.72
+  },
+  {
+    "name": "COSMOTE DP200_Unl_24 μήνες (Offer 3)",
+    "internet": "έως 200 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 37.9,
+    "price_ftth": 36.1
+  },
+  {
+    "name": "COSMOTE DP200_Unl_24 μήνες (Offer 4)",
+    "internet": "έως 200 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 35.9,
+    "price_ftth": 34.2
+  },
+  {
+    "name": "COSMOTE DP300UNL_24 μήνες(Offer 1)",
+    "internet": "300 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 36.1,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP300UNL_24μήνες(Offer 3)",
+    "internet": "300 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 27.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP300 Unl_C_24μήνες (Offer 1)",
+    "internet": "300 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 38.96,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP500 UNL_24 μήνες(Offer 1)",
+    "internet": "500 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 40.86,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP500 UNL_24μήνες(Offer 6)",
+    "internet": "500 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 29.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP500 UNL_24μήνες(Offer 5)",
+    "internet": "500 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 31.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP500 Unl_C_24 μήνες (Offer 1)",
+    "internet": "500 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 43.72,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP1000 UNL_24 μήνες (Offer 1)",
+    "internet": "1000 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 48.48,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP1000 UNL_24μήνες (Offer 2)",
+    "internet": "1000 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 33.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP1000 UNL_24μήνες (Offer 4)",
+    "internet": "1000 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 35.9,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP1000 Unl_C_24 μήνες (Offer 1)",
+    "internet": "1000 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 51.34,
+    "price_ftth": null
+  },
+  {
+    "name": "COSMOTE DP 3000 UNL_24 μήνες (Offer 1)",
+    "internet": "3000 MBps",
+    "fixed": "Απεριόριστα",
+    "mobile": "Απεριόριστα",
+    "price": 70.39,
+    "price_ftth": null
+  }
+]
