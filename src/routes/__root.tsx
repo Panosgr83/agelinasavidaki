@@ -26,14 +26,14 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   return (
     <div className="flex min-h-screen items-center justify-center bg-navy-gradient text-ivory px-4">
       <div className="max-w-md text-center">
         <h1 className="font-serif text-2xl">Κάτι πήγε στραβά</h1>
-        <p className="mt-2 text-sm text-ivory/60">{error.message}</p>
+        <p className="mt-2 text-sm text-ivory/60">{error instanceof Error ? error.message : String(error)}</p>
         <button onClick={() => { router.invalidate(); reset(); }} className="btn-outline-gold mt-8">Δοκίμασε ξανά</button>
       </div>
     </div>
