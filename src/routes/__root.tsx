@@ -48,7 +48,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Αγγελική Σαββιδάκη — Life & NLP Coach Αθήνα" },
       { name: "description", content: "Πιστοποιημένη Σύμβουλος NLP & Life Coaching σε Γαλάτσι, Άνω Πατήσια, Νέα Ιωνία, Νέο Ηράκλειο, Νέα Φιλαδέλφεια, Κυψέλη, Φιλοθέη και Ψυχικό. Premium 1:1 καθοδήγηση. Δήλου 2, 11146 Γαλάτσι." },
       { name: "keywords", content: "life coach Αθήνα, life coach Γαλάτσι, life coach Άνω Πατήσια, life coach Νέα Ιωνία, life coach Νέο Ηράκλειο, life coach Νέα Φιλαδέλφεια, life coach Κυψέλη, life coach Φιλοθέη, life coach Ψυχικό, NLP coach, σύμβουλος ζωής, Αγγελική Σαββιδάκη" },
-      { name: "robots", content: "index, follow" },
+      { name: "robots", content: "noindex, nofollow" },
       { property: "og:site_name", content: "Αγγελική Σαββιδάκη — Life & NLP Coach" },
       { property: "og:locale", content: "el_GR" },
       { property: "og:type", content: "website" },
