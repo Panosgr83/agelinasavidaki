@@ -52,7 +52,7 @@ export const Route = createFileRoute("/arthra/$slug")({
   ),
   errorComponent: ({ error }) => (
     <div className="min-h-screen grid place-items-center text-ink">
-      <p>{error.message}</p>
+      <p>{error instanceof Error ? error.message : String(error)}</p>
     </div>
   ),
   component: ArticlePage,

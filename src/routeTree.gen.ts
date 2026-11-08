@@ -9,37 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as GdprRouteImport } from './routes/gdpr'
-import { Route as CosmoteRouteImport } from './routes/cosmote'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesIndexRouteImport } from './routes/services.index'
-import { Route as PerioxesIndexRouteImport } from './routes/perioxes.index'
-import { Route as CosmoteIndexRouteImport } from './routes/cosmote.index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CosmoteRouteImport } from './routes/cosmote'
+import { Route as GdprRouteImport } from './routes/gdpr'
 import { Route as ArthraIndexRouteImport } from './routes/arthra.index'
-import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
-import { Route as PerioxesSlugRouteImport } from './routes/perioxes.$slug'
-import { Route as CosmoteLoginRouteImport } from './routes/cosmote.login'
-import { Route as CosmoteCustomersRouteImport } from './routes/cosmote.customers'
-import { Route as CosmoteCalculatorRouteImport } from './routes/cosmote.calculator'
 import { Route as ArthraSlugRouteImport } from './routes/arthra.$slug'
+import { Route as CosmoteIndexRouteImport } from './routes/cosmote.index'
+import { Route as CosmoteCalculatorRouteImport } from './routes/cosmote.calculator'
+import { Route as CosmoteCustomersRouteImport } from './routes/cosmote.customers'
+import { Route as CosmoteLoginRouteImport } from './routes/cosmote.login'
+import { Route as PerioxesIndexRouteImport } from './routes/perioxes.index'
+import { Route as PerioxesSlugRouteImport } from './routes/perioxes.$slug'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as CosmoteOffersIndexRouteImport } from './routes/cosmote.offers.index'
 import { Route as CosmoteOffersIdRouteImport } from './routes/cosmote.offers.$id'
 
-const GdprRoute = GdprRouteImport.update({
-  id: '/gdpr',
-  path: '/gdpr',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CosmoteRoute = CosmoteRouteImport.update({
-  id: '/cosmote',
-  path: '/cosmote',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -47,19 +37,29 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/services/',
-  path: '/services/',
+const CosmoteRoute = CosmoteRouteImport.update({
+  id: '/cosmote',
+  path: '/cosmote',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PerioxesIndexRoute = PerioxesIndexRouteImport.update({
-  id: '/perioxes/',
-  path: '/perioxes/',
+const GdprRoute = GdprRouteImport.update({
+  id: '/gdpr',
+  path: '/gdpr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArthraIndexRoute = ArthraIndexRouteImport.update({
+  id: '/arthra/',
+  path: '/arthra/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArthraSlugRoute = ArthraSlugRouteImport.update({
+  id: '/arthra/$slug',
+  path: '/arthra/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CosmoteIndexRoute = CosmoteIndexRouteImport.update({
@@ -67,24 +67,9 @@ const CosmoteIndexRoute = CosmoteIndexRouteImport.update({
   path: '/',
   getParentRoute: () => CosmoteRoute,
 } as any)
-const ArthraIndexRoute = ArthraIndexRouteImport.update({
-  id: '/arthra/',
-  path: '/arthra/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/services/$slug',
-  path: '/services/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PerioxesSlugRoute = PerioxesSlugRouteImport.update({
-  id: '/perioxes/$slug',
-  path: '/perioxes/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CosmoteLoginRoute = CosmoteLoginRouteImport.update({
-  id: '/login',
-  path: '/login',
+const CosmoteCalculatorRoute = CosmoteCalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
   getParentRoute: () => CosmoteRoute,
 } as any)
 const CosmoteCustomersRoute = CosmoteCustomersRouteImport.update({
@@ -92,14 +77,29 @@ const CosmoteCustomersRoute = CosmoteCustomersRouteImport.update({
   path: '/customers',
   getParentRoute: () => CosmoteRoute,
 } as any)
-const CosmoteCalculatorRoute = CosmoteCalculatorRouteImport.update({
-  id: '/calculator',
-  path: '/calculator',
+const CosmoteLoginRoute = CosmoteLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => CosmoteRoute,
 } as any)
-const ArthraSlugRoute = ArthraSlugRouteImport.update({
-  id: '/arthra/$slug',
-  path: '/arthra/$slug',
+const PerioxesIndexRoute = PerioxesIndexRouteImport.update({
+  id: '/perioxes/',
+  path: '/perioxes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerioxesSlugRoute = PerioxesSlugRouteImport.update({
+  id: '/perioxes/$slug',
+  path: '/perioxes/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CosmoteOffersIndexRoute = CosmoteOffersIndexRouteImport.update({
@@ -245,25 +245,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/gdpr': {
-      id: '/gdpr'
-      path: '/gdpr'
-      fullPath: '/gdpr'
-      preLoaderRoute: typeof GdprRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cosmote': {
-      id: '/cosmote'
-      path: '/cosmote'
-      fullPath: '/cosmote'
-      preLoaderRoute: typeof CosmoteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -273,25 +259,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/': {
-      id: '/services/'
-      path: '/services'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
+    '/cosmote': {
+      id: '/cosmote'
+      path: '/cosmote'
+      fullPath: '/cosmote'
+      preLoaderRoute: typeof CosmoteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/perioxes/': {
-      id: '/perioxes/'
-      path: '/perioxes'
-      fullPath: '/perioxes/'
-      preLoaderRoute: typeof PerioxesIndexRouteImport
+    '/gdpr': {
+      id: '/gdpr'
+      path: '/gdpr'
+      fullPath: '/gdpr'
+      preLoaderRoute: typeof GdprRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arthra/': {
+      id: '/arthra/'
+      path: '/arthra'
+      fullPath: '/arthra/'
+      preLoaderRoute: typeof ArthraIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arthra/$slug': {
+      id: '/arthra/$slug'
+      path: '/arthra/$slug'
+      fullPath: '/arthra/$slug'
+      preLoaderRoute: typeof ArthraSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cosmote/': {
@@ -301,32 +301,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CosmoteIndexRouteImport
       parentRoute: typeof CosmoteRoute
     }
-    '/arthra/': {
-      id: '/arthra/'
-      path: '/arthra'
-      fullPath: '/arthra/'
-      preLoaderRoute: typeof ArthraIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/$slug': {
-      id: '/services/$slug'
-      path: '/services/$slug'
-      fullPath: '/services/$slug'
-      preLoaderRoute: typeof ServicesSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/perioxes/$slug': {
-      id: '/perioxes/$slug'
-      path: '/perioxes/$slug'
-      fullPath: '/perioxes/$slug'
-      preLoaderRoute: typeof PerioxesSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cosmote/login': {
-      id: '/cosmote/login'
-      path: '/login'
-      fullPath: '/cosmote/login'
-      preLoaderRoute: typeof CosmoteLoginRouteImport
+    '/cosmote/calculator': {
+      id: '/cosmote/calculator'
+      path: '/calculator'
+      fullPath: '/cosmote/calculator'
+      preLoaderRoute: typeof CosmoteCalculatorRouteImport
       parentRoute: typeof CosmoteRoute
     }
     '/cosmote/customers': {
@@ -336,18 +315,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CosmoteCustomersRouteImport
       parentRoute: typeof CosmoteRoute
     }
-    '/cosmote/calculator': {
-      id: '/cosmote/calculator'
-      path: '/calculator'
-      fullPath: '/cosmote/calculator'
-      preLoaderRoute: typeof CosmoteCalculatorRouteImport
+    '/cosmote/login': {
+      id: '/cosmote/login'
+      path: '/login'
+      fullPath: '/cosmote/login'
+      preLoaderRoute: typeof CosmoteLoginRouteImport
       parentRoute: typeof CosmoteRoute
     }
-    '/arthra/$slug': {
-      id: '/arthra/$slug'
-      path: '/arthra/$slug'
-      fullPath: '/arthra/$slug'
-      preLoaderRoute: typeof ArthraSlugRouteImport
+    '/perioxes/': {
+      id: '/perioxes/'
+      path: '/perioxes'
+      fullPath: '/perioxes/'
+      preLoaderRoute: typeof PerioxesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perioxes/$slug': {
+      id: '/perioxes/$slug'
+      path: '/perioxes/$slug'
+      fullPath: '/perioxes/$slug'
+      preLoaderRoute: typeof PerioxesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cosmote/offers/': {
